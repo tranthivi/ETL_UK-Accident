@@ -1,0 +1,989 @@
+<?xml version="1.0"?>
+<DataProfile xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/sqlserver/2008/DataDebugger/">
+  <ProfileVersion>1.0</ProfileVersion>
+  <DataSources>
+    <DtsDataSource ID="{368C8450-2E35-4B30-90EB-10B2622BF534}" Name="Casualties.xlsx">
+      <DtsConnectionManagerID>Casualties.xlsx</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{2BF5EB9B-E1C1-46B8-B132-B12F0DFAC8DB}" Name="Flat File Connection Manager">
+      <DtsConnectionManagerID>Flat File Connection Manager</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{CA86BC62-D39C-4E38-89E1-0C51F59199BC}" Name="Flat File Connection Manager 1">
+      <DtsConnectionManagerID>Flat File Connection Manager 1</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{3D47DBA2-F712-4A52-A88A-4782F68DAC86}" Name="Flat File Connection Manager 2">
+      <DtsConnectionManagerID>Flat File Connection Manager 2</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{D7CE86A1-753C-4190-852C-AB9F9261AE23}" Name="Flat File Connection Manager 3">
+      <DtsConnectionManagerID>Flat File Connection Manager 3</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{1ECCE2EB-B178-476F-B943-FC9B76EC9802}" Name="Flat File Connection Manager 4">
+      <DtsConnectionManagerID>Flat File Connection Manager 4</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{50AFBB23-6178-44B3-9A03-1F630AF654BE}" Name="Flat File Connection Manager 5">
+      <DtsConnectionManagerID>Flat File Connection Manager 5</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{B6B0723B-CEEE-466B-A1FD-1628EB671624}" Name="Flat File Connection Manager 6">
+      <DtsConnectionManagerID>Flat File Connection Manager 6</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{B64B8B35-47F8-4F46-A1BF-5228FB2CD2C4}" Name="Flat File Connection Manager 7">
+      <DtsConnectionManagerID>Flat File Connection Manager 7</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{DE05AC05-9C89-4823-8AE5-9132147EAE35}" Name="Flat File Connection Manager 8">
+      <DtsConnectionManagerID>Flat File Connection Manager 8</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{F2325707-9300-407A-877F-2CE9E7A62892}" Name="LAPTOP-QJ711BS2\MSSQLSERVER01">
+      <DtsConnectionManagerID>LAPTOP-QJ711BS2\MSSQLSERVER01</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{9271572A-A314-4194-B3BE-663250D33A15}" Name="LAPTOP-QJ711BS2\MSSQLSERVER01 1">
+      <DtsConnectionManagerID>LAPTOP-QJ711BS2\MSSQLSERVER01 1</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{1873D6D4-1110-45D2-863E-87F334B3E057}" Name="LAPTOP-QJ711BS2\MSSQLSERVER01.master">
+      <DtsConnectionManagerID>LAPTOP-QJ711BS2\MSSQLSERVER01.master</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{0C1A8D7E-D952-491F-996F-27FDC40BEC93}" Name="Postcodes.xlsx">
+      <DtsConnectionManagerID>Postcodes.xlsx</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{6A761D15-9F6A-4822-AE14-2CE7BBB65E3D}" Name="ProfilingAccidents">
+      <DtsConnectionManagerID>ProfilingAccidents</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{F18E808F-E191-433C-8ADC-3333EE794BBF}" Name="ProfilingAccidents.xlsx">
+      <DtsConnectionManagerID>ProfilingAccidents.xlsx</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{7201A768-9F8D-4E66-9ACC-88DD96ADA911}" Name="ProfilingFile">
+      <DtsConnectionManagerID>ProfilingFile</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{E653719E-AE6C-45E4-A5E4-50983623AC29}" Name="Vehicles.xlsx">
+      <DtsConnectionManagerID>Vehicles.xlsx</DtsConnectionManagerID>
+    </DtsDataSource>
+  </DataSources>
+  <DataProfileInput>
+    <ProfileMode>Exact</ProfileMode>
+    <Timeout>0</Timeout>
+    <Requests>
+      <ColumnNullRatioProfileRequest ID="NullRatioReq">
+        <DataSourceID>{1873D6D4-1110-45D2-863E-87F334B3E057}</DataSourceID>
+        <Table Schema="dbo" Table="Casualties DW" />
+        <Column IsWildCard="true" />
+      </ColumnNullRatioProfileRequest>
+      <ColumnStatisticsProfileRequest ID="StatisticsReq">
+        <DataSourceID>{1873D6D4-1110-45D2-863E-87F334B3E057}</DataSourceID>
+        <Table Schema="dbo" Table="Casualties DW" />
+        <Column IsWildCard="true" />
+      </ColumnStatisticsProfileRequest>
+      <ColumnLengthDistributionProfileRequest ID="LengthDistReq">
+        <DataSourceID>{1873D6D4-1110-45D2-863E-87F334B3E057}</DataSourceID>
+        <Table Schema="dbo" Table="Casualties DW" />
+        <Column IsWildCard="true" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+      </ColumnLengthDistributionProfileRequest>
+      <ColumnValueDistributionProfileRequest ID="ValueDistReq">
+        <DataSourceID>{1873D6D4-1110-45D2-863E-87F334B3E057}</DataSourceID>
+        <Table Schema="dbo" Table="Casualties DW" />
+        <Column IsWildCard="true" />
+        <Option>FrequentValues</Option>
+        <FrequentValueThreshold>0.001</FrequentValueThreshold>
+      </ColumnValueDistributionProfileRequest>
+      <CandidateKeyProfileRequest ID="KeyReq">
+        <DataSourceID>{1873D6D4-1110-45D2-863E-87F334B3E057}</DataSourceID>
+        <Table Schema="dbo" Table="Casualties DW" />
+        <KeyColumns>
+          <Column IsWildCard="true" />
+        </KeyColumns>
+        <ThresholdSetting>Specified</ThresholdSetting>
+        <KeyStrengthThreshold>0.95</KeyStrengthThreshold>
+        <VerifyOutputInFastMode>false</VerifyOutputInFastMode>
+        <MaxNumberOfViolations>100</MaxNumberOfViolations>
+      </CandidateKeyProfileRequest>
+    </Requests>
+  </DataProfileInput>
+  <DataProfileOutput>
+    <Profiles>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{1873D6D4-1110-45D2-863E-87F334B3E057}</DataSourceID>
+        <Table DataSource="LAPTOP-QJ711BS2\MSSQLSERVER01" Database="master" Schema="dbo" Table="Casualties DW" RowCount="3341679" />
+        <Column Name="Accident_Index" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{1873D6D4-1110-45D2-863E-87F334B3E057}</DataSourceID>
+        <Table DataSource="LAPTOP-QJ711BS2\MSSQLSERVER01" Database="master" Schema="dbo" Table="Casualties DW" RowCount="3341679" />
+        <Column Name="Vehicle_Reference" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{1873D6D4-1110-45D2-863E-87F334B3E057}</DataSourceID>
+        <Table DataSource="LAPTOP-QJ711BS2\MSSQLSERVER01" Database="master" Schema="dbo" Table="Casualties DW" RowCount="3341679" />
+        <Column Name="Casualty_Reference" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{1873D6D4-1110-45D2-863E-87F334B3E057}</DataSourceID>
+        <Table DataSource="LAPTOP-QJ711BS2\MSSQLSERVER01" Database="master" Schema="dbo" Table="Casualties DW" RowCount="3341679" />
+        <Column Name="Sex_of_Casualty" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{1873D6D4-1110-45D2-863E-87F334B3E057}</DataSourceID>
+        <Table DataSource="LAPTOP-QJ711BS2\MSSQLSERVER01" Database="master" Schema="dbo" Table="Casualties DW" RowCount="3341679" />
+        <Column Name="Age_of_Casualty" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{1873D6D4-1110-45D2-863E-87F334B3E057}</DataSourceID>
+        <Table DataSource="LAPTOP-QJ711BS2\MSSQLSERVER01" Database="master" Schema="dbo" Table="Casualties DW" RowCount="3341679" />
+        <Column Name="Age_Band_of_Casualty" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{1873D6D4-1110-45D2-863E-87F334B3E057}</DataSourceID>
+        <Table DataSource="LAPTOP-QJ711BS2\MSSQLSERVER01" Database="master" Schema="dbo" Table="Casualties DW" RowCount="3341679" />
+        <Column Name="Casualty_Severity" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{1873D6D4-1110-45D2-863E-87F334B3E057}</DataSourceID>
+        <Table DataSource="LAPTOP-QJ711BS2\MSSQLSERVER01" Database="master" Schema="dbo" Table="Casualties DW" RowCount="3341679" />
+        <Column Name="Casualty_Type" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{1873D6D4-1110-45D2-863E-87F334B3E057}</DataSourceID>
+        <Table DataSource="LAPTOP-QJ711BS2\MSSQLSERVER01" Database="master" Schema="dbo" Table="Casualties DW" RowCount="3341679" />
+        <Column Name="Casualty_Home_Area_Type" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{1873D6D4-1110-45D2-863E-87F334B3E057}</DataSourceID>
+        <Table DataSource="LAPTOP-QJ711BS2\MSSQLSERVER01" Database="master" Schema="dbo" Table="Casualties DW" RowCount="3341679" />
+        <Column Name="Casualty_Class" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{1873D6D4-1110-45D2-863E-87F334B3E057}</DataSourceID>
+        <Table DataSource="LAPTOP-QJ711BS2\MSSQLSERVER01" Database="master" Schema="dbo" Table="Casualties DW" RowCount="3341679" />
+        <Column Name="Accident_Index" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>13</MinLength>
+        <MaxLength>13</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>13</Length>
+            <Count>3344768</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{1873D6D4-1110-45D2-863E-87F334B3E057}</DataSourceID>
+        <Table DataSource="LAPTOP-QJ711BS2\MSSQLSERVER01" Database="master" Schema="dbo" Table="Casualties DW" RowCount="3341679" />
+        <Column Name="Vehicle_Reference" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>1</MinLength>
+        <MaxLength>2</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>1</Length>
+            <Count>3344170</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>2</Length>
+            <Count>598</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{1873D6D4-1110-45D2-863E-87F334B3E057}</DataSourceID>
+        <Table DataSource="LAPTOP-QJ711BS2\MSSQLSERVER01" Database="master" Schema="dbo" Table="Casualties DW" RowCount="3341679" />
+        <Column Name="Casualty_Reference" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>1</MinLength>
+        <MaxLength>3</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>1</Length>
+            <Count>3338820</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>3</Length>
+            <Count>12</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>2</Length>
+            <Count>5936</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{1873D6D4-1110-45D2-863E-87F334B3E057}</DataSourceID>
+        <Table DataSource="LAPTOP-QJ711BS2\MSSQLSERVER01" Database="master" Schema="dbo" Table="Casualties DW" RowCount="3341679" />
+        <Column Name="Sex_of_Casualty" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>1</MinLength>
+        <MaxLength>2</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>1</Length>
+            <Count>3344663</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>2</Length>
+            <Count>105</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{1873D6D4-1110-45D2-863E-87F334B3E057}</DataSourceID>
+        <Table DataSource="LAPTOP-QJ711BS2\MSSQLSERVER01" Database="master" Schema="dbo" Table="Casualties DW" RowCount="3341679" />
+        <Column Name="Age_of_Casualty" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>1</MinLength>
+        <MaxLength>3</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>1</Length>
+            <Count>135700</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>3</Length>
+            <Count>32</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>2</Length>
+            <Count>3209036</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{1873D6D4-1110-45D2-863E-87F334B3E057}</DataSourceID>
+        <Table DataSource="LAPTOP-QJ711BS2\MSSQLSERVER01" Database="master" Schema="dbo" Table="Casualties DW" RowCount="3341679" />
+        <Column Name="Age_Band_of_Casualty" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>1</MinLength>
+        <MaxLength>2</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>1</Length>
+            <Count>3023374</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>2</Length>
+            <Count>321394</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{1873D6D4-1110-45D2-863E-87F334B3E057}</DataSourceID>
+        <Table DataSource="LAPTOP-QJ711BS2\MSSQLSERVER01" Database="master" Schema="dbo" Table="Casualties DW" RowCount="3341679" />
+        <Column Name="Casualty_Severity" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>1</MinLength>
+        <MaxLength>1</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>1</Length>
+            <Count>3344768</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{1873D6D4-1110-45D2-863E-87F334B3E057}</DataSourceID>
+        <Table DataSource="LAPTOP-QJ711BS2\MSSQLSERVER01" Database="master" Schema="dbo" Table="Casualties DW" RowCount="3341679" />
+        <Column Name="Casualty_Type" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>1</MinLength>
+        <MaxLength>2</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>1</Length>
+            <Count>3114208</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>2</Length>
+            <Count>230560</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{1873D6D4-1110-45D2-863E-87F334B3E057}</DataSourceID>
+        <Table DataSource="LAPTOP-QJ711BS2\MSSQLSERVER01" Database="master" Schema="dbo" Table="Casualties DW" RowCount="3341679" />
+        <Column Name="Casualty_Home_Area_Type" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>1</MinLength>
+        <MaxLength>2</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>1</Length>
+            <Count>2947980</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>2</Length>
+            <Count>396788</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{1873D6D4-1110-45D2-863E-87F334B3E057}</DataSourceID>
+        <Table DataSource="LAPTOP-QJ711BS2\MSSQLSERVER01" Database="master" Schema="dbo" Table="Casualties DW" RowCount="3341679" />
+        <Column Name="Casualty_Class" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>1</MinLength>
+        <MaxLength>1</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>1</Length>
+            <Count>3344768</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{1873D6D4-1110-45D2-863E-87F334B3E057}</DataSourceID>
+        <Table DataSource="LAPTOP-QJ711BS2\MSSQLSERVER01" Database="master" Schema="dbo" Table="Casualties DW" RowCount="3341679" />
+        <Column Name="Accident_Index" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>582027</NumberOfDistinctValues>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{1873D6D4-1110-45D2-863E-87F334B3E057}</DataSourceID>
+        <Table DataSource="LAPTOP-QJ711BS2\MSSQLSERVER01" Database="master" Schema="dbo" Table="Casualties DW" RowCount="3341679" />
+        <Column Name="Vehicle_Reference" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>67</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>1</Value>
+            <Count>1885441</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3</Value>
+            <Count>94853</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>4</Value>
+            <Count>16556</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2</Value>
+            <Count>1349137</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>5</Value>
+            <Count>3536</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{1873D6D4-1110-45D2-863E-87F334B3E057}</DataSourceID>
+        <Table DataSource="LAPTOP-QJ711BS2\MSSQLSERVER01" Database="master" Schema="dbo" Table="Casualties DW" RowCount="3341679" />
+        <Column Name="Casualty_Reference" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>97</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>1</Value>
+            <Count>2506485</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>7</Value>
+            <Count>3929</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3</Value>
+            <Count>175257</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>4</Value>
+            <Count>64157</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2</Value>
+            <Count>559814</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>5</Value>
+            <Count>24091</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>6</Value>
+            <Count>9525</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{1873D6D4-1110-45D2-863E-87F334B3E057}</DataSourceID>
+        <Table DataSource="LAPTOP-QJ711BS2\MSSQLSERVER01" Database="master" Schema="dbo" Table="Casualties DW" RowCount="3341679" />
+        <Column Name="Sex_of_Casualty" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>3</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>1</Value>
+            <Count>1979950</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2</Value>
+            <Count>1372690</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{1873D6D4-1110-45D2-863E-87F334B3E057}</DataSourceID>
+        <Table DataSource="LAPTOP-QJ711BS2\MSSQLSERVER01" Database="master" Schema="dbo" Table="Casualties DW" RowCount="3341679" />
+        <Column Name="Age_of_Casualty" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>105</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>40</Value>
+            <Count>60407</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>80</Value>
+            <Count>10964</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>36</Value>
+            <Count>50970</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>30</Value>
+            <Count>76388</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>65</Value>
+            <Count>20848</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>83</Value>
+            <Count>7820</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>11</Value>
+            <Count>28681</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>74</Value>
+            <Count>11856</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>54</Value>
+            <Count>34770</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>61</Value>
+            <Count>22402</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>62</Value>
+            <Count>22425</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>82</Value>
+            <Count>8513</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>55</Value>
+            <Count>33847</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>52</Value>
+            <Count>40582</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>58</Value>
+            <Count>27118</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>46</Value>
+            <Count>51869</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>48</Value>
+            <Count>49866</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>68</Value>
+            <Count>15392</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>84</Value>
+            <Count>6839</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>10</Value>
+            <Count>23009</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>88</Value>
+            <Count>3753</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>79</Value>
+            <Count>10325</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>76</Value>
+            <Count>11613</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>73</Value>
+            <Count>12093</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>81</Value>
+            <Count>9144</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>4</Value>
+            <Count>14255</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>21</Value>
+            <Count>93358</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>39</Value>
+            <Count>52908</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>45</Value>
+            <Count>54206</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3</Value>
+            <Count>13199</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>75</Value>
+            <Count>12697</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>20</Value>
+            <Count>97251</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>43</Value>
+            <Count>53739</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>26</Value>
+            <Count>76013</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>29</Value>
+            <Count>66523</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>38</Value>
+            <Count>52020</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>22</Value>
+            <Count>88932</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>31</Value>
+            <Count>62574</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>77</Value>
+            <Count>10872</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>25</Value>
+            <Count>84003</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>47</Value>
+            <Count>50048</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>27</Value>
+            <Count>71025</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>57</Value>
+            <Count>28172</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>59</Value>
+            <Count>25579</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>64</Value>
+            <Count>21280</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>87</Value>
+            <Count>4612</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>8</Value>
+            <Count>18264</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>86</Value>
+            <Count>5215</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>19</Value>
+            <Count>97557</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>71</Value>
+            <Count>12558</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>89</Value>
+            <Count>3347</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>85</Value>
+            <Count>6504</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2</Value>
+            <Count>10413</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>5</Value>
+            <Count>15575</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>53</Value>
+            <Count>37658</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>23</Value>
+            <Count>87978</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>41</Value>
+            <Count>53781</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>6</Value>
+            <Count>16407</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>15</Value>
+            <Count>28893</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>78</Value>
+            <Count>10375</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>9</Value>
+            <Count>19596</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>34</Value>
+            <Count>54000</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>24</Value>
+            <Count>81500</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>32</Value>
+            <Count>61074</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>18</Value>
+            <Count>96654</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>14</Value>
+            <Count>27847</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>13</Value>
+            <Count>27287</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>33</Value>
+            <Count>57281</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>69</Value>
+            <Count>14195</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1</Value>
+            <Count>7532</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>-1</Value>
+            <Count>61848</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>51</Value>
+            <Count>41767</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>50</Value>
+            <Count>49499</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>35</Value>
+            <Count>57115</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>60</Value>
+            <Count>27804</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>16</Value>
+            <Count>49172</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>7</Value>
+            <Count>17644</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>72</Value>
+            <Count>12190</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>12</Value>
+            <Count>30398</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>66</Value>
+            <Count>17925</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>67</Value>
+            <Count>16808</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>28</Value>
+            <Count>69941</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>63</Value>
+            <Count>21723</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>37</Value>
+            <Count>50278</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>70</Value>
+            <Count>15531</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>44</Value>
+            <Count>52602</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>56</Value>
+            <Count>31566</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>17</Value>
+            <Count>79342</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>42</Value>
+            <Count>54308</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>49</Value>
+            <Count>46974</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{1873D6D4-1110-45D2-863E-87F334B3E057}</DataSourceID>
+        <Table DataSource="LAPTOP-QJ711BS2\MSSQLSERVER01" Database="master" Schema="dbo" Table="Casualties DW" RowCount="3341679" />
+        <Column Name="Age_Band_of_Casualty" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>12</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>11</Value>
+            <Count>119038</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1</Value>
+            <Count>64113</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>7</Value>
+            <Count>535282</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>-1</Value>
+            <Count>61861</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>10</Value>
+            <Count>141250</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3</Value>
+            <Count>143117</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>4</Value>
+            <Count>420000</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>8</Value>
+            <Count>436930</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2</Value>
+            <Count>94931</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>6</Value>
+            <Count>652013</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>5</Value>
+            <Count>435811</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>9</Value>
+            <Count>248937</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{1873D6D4-1110-45D2-863E-87F334B3E057}</DataSourceID>
+        <Table DataSource="LAPTOP-QJ711BS2\MSSQLSERVER01" Database="master" Schema="dbo" Table="Casualties DW" RowCount="3341679" />
+        <Column Name="Casualty_Severity" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>3</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>1</Value>
+            <Count>29653</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3</Value>
+            <Count>2941246</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2</Value>
+            <Count>382694</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{1873D6D4-1110-45D2-863E-87F334B3E057}</DataSourceID>
+        <Table DataSource="LAPTOP-QJ711BS2\MSSQLSERVER01" Database="master" Schema="dbo" Table="Casualties DW" RowCount="3341679" />
+        <Column Name="Casualty_Type" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>21</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>0</Value>
+            <Count>446092</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>11</Value>
+            <Count>100520</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1</Value>
+            <Count>346311</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>90</Value>
+            <Count>15405</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>10</Value>
+            <Count>10170</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>4</Value>
+            <Count>39395</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3</Value>
+            <Count>131999</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>21</Value>
+            <Count>14764</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>20</Value>
+            <Count>7438</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>8</Value>
+            <Count>50829</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>19</Value>
+            <Count>77109</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2</Value>
+            <Count>47114</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>9</Value>
+            <Count>1932992</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>5</Value>
+            <Count>127764</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{1873D6D4-1110-45D2-863E-87F334B3E057}</DataSourceID>
+        <Table DataSource="LAPTOP-QJ711BS2\MSSQLSERVER01" Database="master" Schema="dbo" Table="Casualties DW" RowCount="3341679" />
+        <Column Name="Casualty_Home_Area_Type" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>4</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>1</Value>
+            <Count>2380450</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>-1</Value>
+            <Count>398474</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3</Value>
+            <Count>316050</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2</Value>
+            <Count>259064</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{1873D6D4-1110-45D2-863E-87F334B3E057}</DataSourceID>
+        <Table DataSource="LAPTOP-QJ711BS2\MSSQLSERVER01" Database="master" Schema="dbo" Table="Casualties DW" RowCount="3341679" />
+        <Column Name="Casualty_Class" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>3</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>1</Value>
+            <Count>2132089</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3</Value>
+            <Count>446177</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2</Value>
+            <Count>775975</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+    </Profiles>
+  </DataProfileOutput>
+</DataProfile>

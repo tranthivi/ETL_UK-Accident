@@ -1,0 +1,335 @@
+<?xml version="1.0"?>
+<DataProfile xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/sqlserver/2008/DataDebugger/">
+  <ProfileVersion>1.0</ProfileVersion>
+  <DataSources>
+    <DtsDataSource ID="{368C8450-2E35-4B30-90EB-10B2622BF534}" Name="Casualties.xlsx">
+      <DtsConnectionManagerID>Casualties.xlsx</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{2BF5EB9B-E1C1-46B8-B132-B12F0DFAC8DB}" Name="Flat File Connection Manager">
+      <DtsConnectionManagerID>Flat File Connection Manager</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{CA86BC62-D39C-4E38-89E1-0C51F59199BC}" Name="Flat File Connection Manager 1">
+      <DtsConnectionManagerID>Flat File Connection Manager 1</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{3D47DBA2-F712-4A52-A88A-4782F68DAC86}" Name="Flat File Connection Manager 2">
+      <DtsConnectionManagerID>Flat File Connection Manager 2</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{D7CE86A1-753C-4190-852C-AB9F9261AE23}" Name="Flat File Connection Manager 3">
+      <DtsConnectionManagerID>Flat File Connection Manager 3</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{1ECCE2EB-B178-476F-B943-FC9B76EC9802}" Name="Flat File Connection Manager 4">
+      <DtsConnectionManagerID>Flat File Connection Manager 4</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{50AFBB23-6178-44B3-9A03-1F630AF654BE}" Name="Flat File Connection Manager 5">
+      <DtsConnectionManagerID>Flat File Connection Manager 5</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{B6B0723B-CEEE-466B-A1FD-1628EB671624}" Name="Flat File Connection Manager 6">
+      <DtsConnectionManagerID>Flat File Connection Manager 6</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{B64B8B35-47F8-4F46-A1BF-5228FB2CD2C4}" Name="Flat File Connection Manager 7">
+      <DtsConnectionManagerID>Flat File Connection Manager 7</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{DE05AC05-9C89-4823-8AE5-9132147EAE35}" Name="Flat File Connection Manager 8">
+      <DtsConnectionManagerID>Flat File Connection Manager 8</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{F2325707-9300-407A-877F-2CE9E7A62892}" Name="LAPTOP-QJ711BS2\MSSQLSERVER01">
+      <DtsConnectionManagerID>LAPTOP-QJ711BS2\MSSQLSERVER01</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{9271572A-A314-4194-B3BE-663250D33A15}" Name="LAPTOP-QJ711BS2\MSSQLSERVER01 1">
+      <DtsConnectionManagerID>LAPTOP-QJ711BS2\MSSQLSERVER01 1</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{1873D6D4-1110-45D2-863E-87F334B3E057}" Name="LAPTOP-QJ711BS2\MSSQLSERVER01.master">
+      <DtsConnectionManagerID>LAPTOP-QJ711BS2\MSSQLSERVER01.master</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{0C1A8D7E-D952-491F-996F-27FDC40BEC93}" Name="Postcodes.xlsx">
+      <DtsConnectionManagerID>Postcodes.xlsx</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{6A761D15-9F6A-4822-AE14-2CE7BBB65E3D}" Name="ProfilingAccidents">
+      <DtsConnectionManagerID>ProfilingAccidents</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{F18E808F-E191-433C-8ADC-3333EE794BBF}" Name="ProfilingAccidents.xlsx">
+      <DtsConnectionManagerID>ProfilingAccidents.xlsx</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{7201A768-9F8D-4E66-9ACC-88DD96ADA911}" Name="ProfilingFile">
+      <DtsConnectionManagerID>ProfilingFile</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{E653719E-AE6C-45E4-A5E4-50983623AC29}" Name="Vehicles.xlsx">
+      <DtsConnectionManagerID>Vehicles.xlsx</DtsConnectionManagerID>
+    </DtsDataSource>
+  </DataSources>
+  <DataProfileInput>
+    <ProfileMode>Exact</ProfileMode>
+    <Timeout>0</Timeout>
+    <Requests>
+      <ColumnNullRatioProfileRequest ID="NullRatioReq">
+        <DataSourceID>{1873D6D4-1110-45D2-863E-87F334B3E057}</DataSourceID>
+        <Table Schema="dbo" Table="Vehicles DW" />
+        <Column IsWildCard="true" />
+      </ColumnNullRatioProfileRequest>
+      <ColumnStatisticsProfileRequest ID="StatisticsReq">
+        <DataSourceID>{1873D6D4-1110-45D2-863E-87F334B3E057}</DataSourceID>
+        <Table Schema="dbo" Table="Vehicles DW" />
+        <Column IsWildCard="true" />
+      </ColumnStatisticsProfileRequest>
+      <ColumnLengthDistributionProfileRequest ID="LengthDistReq">
+        <DataSourceID>{1873D6D4-1110-45D2-863E-87F334B3E057}</DataSourceID>
+        <Table Schema="dbo" Table="Vehicles DW" />
+        <Column IsWildCard="true" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+      </ColumnLengthDistributionProfileRequest>
+      <ColumnValueDistributionProfileRequest ID="ValueDistReq">
+        <DataSourceID>{1873D6D4-1110-45D2-863E-87F334B3E057}</DataSourceID>
+        <Table Schema="dbo" Table="Vehicles DW" />
+        <Column IsWildCard="true" />
+        <Option>FrequentValues</Option>
+        <FrequentValueThreshold>0.001</FrequentValueThreshold>
+      </ColumnValueDistributionProfileRequest>
+      <CandidateKeyProfileRequest ID="KeyReq">
+        <DataSourceID>{1873D6D4-1110-45D2-863E-87F334B3E057}</DataSourceID>
+        <Table Schema="dbo" Table="Vehicles DW" />
+        <KeyColumns>
+          <Column IsWildCard="true" />
+        </KeyColumns>
+        <ThresholdSetting>Specified</ThresholdSetting>
+        <KeyStrengthThreshold>0.95</KeyStrengthThreshold>
+        <VerifyOutputInFastMode>false</VerifyOutputInFastMode>
+        <MaxNumberOfViolations>100</MaxNumberOfViolations>
+      </CandidateKeyProfileRequest>
+    </Requests>
+  </DataProfileInput>
+  <DataProfileOutput>
+    <Profiles>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{1873D6D4-1110-45D2-863E-87F334B3E057}</DataSourceID>
+        <Table DataSource="LAPTOP-QJ711BS2\MSSQLSERVER01" Database="master" Schema="dbo" Table="Vehicles DW" RowCount="4246034" />
+        <Column Name="Accident_Index" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{1873D6D4-1110-45D2-863E-87F334B3E057}</DataSourceID>
+        <Table DataSource="LAPTOP-QJ711BS2\MSSQLSERVER01" Database="master" Schema="dbo" Table="Vehicles DW" RowCount="4246034" />
+        <Column Name="Vehicle_Reference" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{1873D6D4-1110-45D2-863E-87F334B3E057}</DataSourceID>
+        <Table DataSource="LAPTOP-QJ711BS2\MSSQLSERVER01" Database="master" Schema="dbo" Table="Vehicles DW" RowCount="4246034" />
+        <Column Name="Vehicle_Type" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{1873D6D4-1110-45D2-863E-87F334B3E057}</DataSourceID>
+        <Table DataSource="LAPTOP-QJ711BS2\MSSQLSERVER01" Database="master" Schema="dbo" Table="Vehicles DW" RowCount="4246034" />
+        <Column Name="Journey_Purpose_of_Driver" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{1873D6D4-1110-45D2-863E-87F334B3E057}</DataSourceID>
+        <Table DataSource="LAPTOP-QJ711BS2\MSSQLSERVER01" Database="master" Schema="dbo" Table="Vehicles DW" RowCount="4246034" />
+        <Column Name="Accident_Index" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>13</MinLength>
+        <MaxLength>13</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>13</Length>
+            <Count>4247996</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{1873D6D4-1110-45D2-863E-87F334B3E057}</DataSourceID>
+        <Table DataSource="LAPTOP-QJ711BS2\MSSQLSERVER01" Database="master" Schema="dbo" Table="Vehicles DW" RowCount="4246034" />
+        <Column Name="Vehicle_Reference" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>1</MinLength>
+        <MaxLength>2</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>1</Length>
+            <Count>4247138</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>2</Length>
+            <Count>858</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{1873D6D4-1110-45D2-863E-87F334B3E057}</DataSourceID>
+        <Table DataSource="LAPTOP-QJ711BS2\MSSQLSERVER01" Database="master" Schema="dbo" Table="Vehicles DW" RowCount="4246034" />
+        <Column Name="Vehicle_Type" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>1</MinLength>
+        <MaxLength>2</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>1</Length>
+            <Count>3767495</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>2</Length>
+            <Count>480501</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{1873D6D4-1110-45D2-863E-87F334B3E057}</DataSourceID>
+        <Table DataSource="LAPTOP-QJ711BS2\MSSQLSERVER01" Database="master" Schema="dbo" Table="Vehicles DW" RowCount="4246034" />
+        <Column Name="Journey_Purpose_of_Driver" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>1</MinLength>
+        <MaxLength>2</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>1</Length>
+            <Count>4247981</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>2</Length>
+            <Count>15</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{1873D6D4-1110-45D2-863E-87F334B3E057}</DataSourceID>
+        <Table DataSource="LAPTOP-QJ711BS2\MSSQLSERVER01" Database="master" Schema="dbo" Table="Vehicles DW" RowCount="4246034" />
+        <Column Name="Accident_Index" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>582027</NumberOfDistinctValues>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{1873D6D4-1110-45D2-863E-87F334B3E057}</DataSourceID>
+        <Table DataSource="LAPTOP-QJ711BS2\MSSQLSERVER01" Database="master" Schema="dbo" Table="Vehicles DW" RowCount="4246034" />
+        <Column Name="Vehicle_Reference" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>68</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>1</Value>
+            <Count>2332156</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>4</Value>
+            <Count>50041</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3</Value>
+            <Count>225027</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2</Value>
+            <Count>1627372</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>5</Value>
+            <Count>12399</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>6</Value>
+            <Count>4259</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{1873D6D4-1110-45D2-863E-87F334B3E057}</DataSourceID>
+        <Table DataSource="LAPTOP-QJ711BS2\MSSQLSERVER01" Database="master" Schema="dbo" Table="Vehicles DW" RowCount="4246034" />
+        <Column Name="Vehicle_Type" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>21</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>1</Value>
+            <Count>332095</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>90</Value>
+            <Count>31258</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>17</Value>
+            <Count>8311</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>11</Value>
+            <Count>109127</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>10</Value>
+            <Count>10750</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3</Value>
+            <Count>129470</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>21</Value>
+            <Count>77727</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>4</Value>
+            <Count>38611</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>20</Value>
+            <Count>29003</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>8</Value>
+            <Count>86629</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>5</Value>
+            <Count>121747</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>9</Value>
+            <Count>3018078</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>19</Value>
+            <Count>208949</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2</Value>
+            <Count>47207</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{1873D6D4-1110-45D2-863E-87F334B3E057}</DataSourceID>
+        <Table DataSource="LAPTOP-QJ711BS2\MSSQLSERVER01" Database="master" Schema="dbo" Table="Vehicles DW" RowCount="4246034" />
+        <Column Name="Journey_Purpose_of_Driver" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>7</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>3</Value>
+            <Count>42430</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>4</Value>
+            <Count>14734</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2</Value>
+            <Count>406258</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>6</Value>
+            <Count>2998073</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>5</Value>
+            <Count>81844</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1</Value>
+            <Count>712344</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+    </Profiles>
+  </DataProfileOutput>
+</DataProfile>
