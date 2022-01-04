@@ -1,0 +1,2684 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/31/2021 11:08:16 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="TRANG"
+  DTS:CreatorName="TRANG\USER"
+  DTS:DTSID="{A695FB84-B786-4973-B5F8-B0EEF614AE54}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.170"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="10"
+  DTS:VersionGUID="{E0C67662-B689-4664-B716-514EF3131808}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[TRANG\SQLDEV2019.UK_Accident_Stage_v2.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{30282EB3-45BE-40E3-9254-FD12EC2EA972}"
+      DTS:ObjectName="TRANG\SQLDEV2019.UK_Accident_Stage_v2.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=TRANG\SQLDEV2019;User ID=sa;Initial Catalog=UK_Accident_Stage_v2;Provider=SQLNCLI11.1;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[TRANG\SQLDEV2019.UK_Clean_Data]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{5E635E59-C3D5-4CD7-A775-85B0C1D661AF}"
+      DTS:ObjectName="TRANG\SQLDEV2019.UK_Clean_Data">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=TRANG\SQLDEV2019;Initial Catalog=UK_Clean_Data;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[TRANG\SQLDEV2019.UK_Metadata.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{D2916F57-30C7-4D2A-9D5F-EFB96DB584B4}"
+      DTS:ObjectName="TRANG\SQLDEV2019.UK_Metadata.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=TRANG\SQLDEV2019;User ID=sa;Initial Catalog=UK_Metadata;Provider=SQLNCLI11.1;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[TRANG\SQLDEV2019.UK_Metadata_v2.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{71F0B9B5-47E6-4B76-BB17-ED75C30547E5}"
+      DTS:ObjectName="TRANG\SQLDEV2019.UK_Metadata_v2.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=TRANG\SQLDEV2019;User ID=sa;Initial Catalog=UK_Metadata_v2;Provider=SQLNCLI11.1;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{D4DE3037-9D04-41CF-8F51-5D422BD63B24}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="CET_ac">
+      <DTS:VariableValue
+        DTS:DataType="7">11/20/2020</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F94FEEC4-E9E8-40A2-BC7C-AAE4AC002333}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="CET_ca">
+      <DTS:VariableValue
+        DTS:DataType="7">11/20/2020</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{556BEABA-B27B-4344-AC4A-5D4F2D89E8FC}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="CET_lsoa">
+      <DTS:VariableValue
+        DTS:DataType="7">11/20/2020</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{5D25B68E-91DF-4D96-B167-917D2285C7B3}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="CET_po">
+      <DTS:VariableValue
+        DTS:DataType="7">11/20/2020</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E1EDE5E7-DD7C-4BF1-AE16-2933BD605BE2}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="CET_ve">
+      <DTS:VariableValue
+        DTS:DataType="7">11/20/2020</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{036E837B-CC33-43B0-A08C-2288DCA392E3}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="LSET_ac">
+      <DTS:VariableValue
+        DTS:DataType="7">11/20/2020</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6C461B28-1BF5-4943-86FA-FA90E008AD91}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="LSET_ca">
+      <DTS:VariableValue
+        DTS:DataType="7">11/20/2020</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{90778C92-28C3-4A80-875C-B6D031C0E5B7}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="LSET_lsoa">
+      <DTS:VariableValue
+        DTS:DataType="7">11/20/2020</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A070F0B8-3E8B-4389-9716-6AB4CFE0F97A}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="LSET_po">
+      <DTS:VariableValue
+        DTS:DataType="7">11/20/2020</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E870B940-1AE4-414D-9121-F358A2B78BF4}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="LSET_ve">
+      <DTS:VariableValue
+        DTS:DataType="7">11/20/2020</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Casualty"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{1c8b5c3f-4e5a-495d-ae84-ddfc0fb4fbba}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Casualty"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Casualty\Casualties_Stage"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Casualties_Stage"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Casualties_Stage]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Casualty\Casualties_Stage.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[TRANG\SQLDEV2019.UK_Accident_Stage_v2.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[TRANG\SQLDEV2019.UK_Accident_Stage_v2.sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Casualty\Casualties_Stage.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Casualty\Casualties_Stage.Inputs[OLE DB Destination Input].Columns[Accident_Index]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Accident_Index"
+                      externalMetadataColumnId="Package\Casualty\Casualties_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Accident_Index]"
+                      lineageId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output].Columns[Accident_Index]" />
+                    <inputColumn
+                      refId="Package\Casualty\Casualties_Stage.Inputs[OLE DB Destination Input].Columns[Vehicle_Reference]"
+                      cachedDataType="i4"
+                      cachedName="Vehicle_Reference"
+                      externalMetadataColumnId="Package\Casualty\Casualties_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Vehicle_Reference]"
+                      lineageId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output].Columns[Vehicle_Reference]" />
+                    <inputColumn
+                      refId="Package\Casualty\Casualties_Stage.Inputs[OLE DB Destination Input].Columns[Casualty_Reference]"
+                      cachedDataType="i4"
+                      cachedName="Casualty_Reference"
+                      externalMetadataColumnId="Package\Casualty\Casualties_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Casualty_Reference]"
+                      lineageId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output].Columns[Casualty_Reference]" />
+                    <inputColumn
+                      refId="Package\Casualty\Casualties_Stage.Inputs[OLE DB Destination Input].Columns[Age_of_Casualty]"
+                      cachedDataType="i4"
+                      cachedName="Age_of_Casualty"
+                      externalMetadataColumnId="Package\Casualty\Casualties_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Age_of_Casualty]"
+                      lineageId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output].Columns[Age_of_Casualty]" />
+                    <inputColumn
+                      refId="Package\Casualty\Casualties_Stage.Inputs[OLE DB Destination Input].Columns[Age_of_Casualty_code]"
+                      cachedDataType="i4"
+                      cachedName="Age_of_Casualty_code"
+                      externalMetadataColumnId="Package\Casualty\Casualties_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Age_of_Casualty_Code]"
+                      lineageId="Package\Casualty\Lookup Age of Casualty.Outputs[Lookup Match Output].Columns[Age_of_Casualty_code]" />
+                    <inputColumn
+                      refId="Package\Casualty\Casualties_Stage.Inputs[OLE DB Destination Input].Columns[code_class]"
+                      cachedDataType="i4"
+                      cachedName="code_class"
+                      externalMetadataColumnId="Package\Casualty\Casualties_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Casualty_Class_Code]"
+                      lineageId="Package\Casualty\Lookup Casual class label.Outputs[Lookup Match Output].Columns[code_class]" />
+                    <inputColumn
+                      refId="Package\Casualty\Casualties_Stage.Inputs[OLE DB Destination Input].Columns[label_class]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="label_class"
+                      externalMetadataColumnId="Package\Casualty\Casualties_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Casualty_Class]"
+                      lineageId="Package\Casualty\Lookup Casual class label.Outputs[Lookup Match Output].Columns[label_class]" />
+                    <inputColumn
+                      refId="Package\Casualty\Casualties_Stage.Inputs[OLE DB Destination Input].Columns[code_sex]"
+                      cachedDataType="i4"
+                      cachedName="code_sex"
+                      externalMetadataColumnId="Package\Casualty\Casualties_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Sex_of_Casualty_Code]"
+                      lineageId="Package\Casualty\Lookup Sex of Casualty.Outputs[Lookup Match Output].Columns[code_sex]" />
+                    <inputColumn
+                      refId="Package\Casualty\Casualties_Stage.Inputs[OLE DB Destination Input].Columns[label_sex]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="label_sex"
+                      externalMetadataColumnId="Package\Casualty\Casualties_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Sex_of_Casualty]"
+                      lineageId="Package\Casualty\Lookup Sex of Casualty.Outputs[Lookup Match Output].Columns[label_sex]" />
+                    <inputColumn
+                      refId="Package\Casualty\Casualties_Stage.Inputs[OLE DB Destination Input].Columns[code_band]"
+                      cachedDataType="i4"
+                      cachedName="code_band"
+                      externalMetadataColumnId="Package\Casualty\Casualties_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Age_Band_of_Casualty_Code]"
+                      lineageId="Package\Casualty\Lookup Age Band of Casualty label.Outputs[Lookup Match Output].Columns[code_band]" />
+                    <inputColumn
+                      refId="Package\Casualty\Casualties_Stage.Inputs[OLE DB Destination Input].Columns[label_band]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="label_band"
+                      externalMetadataColumnId="Package\Casualty\Casualties_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Age_Band_of_Casualty]"
+                      lineageId="Package\Casualty\Lookup Age Band of Casualty label.Outputs[Lookup Match Output].Columns[label_band]" />
+                    <inputColumn
+                      refId="Package\Casualty\Casualties_Stage.Inputs[OLE DB Destination Input].Columns[code_severity]"
+                      cachedDataType="i4"
+                      cachedName="code_severity"
+                      externalMetadataColumnId="Package\Casualty\Casualties_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Casualty_Severity_Code]"
+                      lineageId="Package\Casualty\Lookup Casualty severity label.Outputs[Lookup Match Output].Columns[code_severity]" />
+                    <inputColumn
+                      refId="Package\Casualty\Casualties_Stage.Inputs[OLE DB Destination Input].Columns[label_severity]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="label_severity"
+                      externalMetadataColumnId="Package\Casualty\Casualties_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Casualty_Severity]"
+                      lineageId="Package\Casualty\Lookup Casualty severity label.Outputs[Lookup Match Output].Columns[label_severity]" />
+                    <inputColumn
+                      refId="Package\Casualty\Casualties_Stage.Inputs[OLE DB Destination Input].Columns[code_type]"
+                      cachedDataType="i4"
+                      cachedName="code_type"
+                      externalMetadataColumnId="Package\Casualty\Casualties_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Casualty_Type_Code]"
+                      lineageId="Package\Casualty\Lookup Casualty Type label.Outputs[Lookup Match Output].Columns[code_type]" />
+                    <inputColumn
+                      refId="Package\Casualty\Casualties_Stage.Inputs[OLE DB Destination Input].Columns[label_type]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="label_type"
+                      externalMetadataColumnId="Package\Casualty\Casualties_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Casualty_Type]"
+                      lineageId="Package\Casualty\Lookup Casualty Type label.Outputs[Lookup Match Output].Columns[label_type]" />
+                    <inputColumn
+                      refId="Package\Casualty\Casualties_Stage.Inputs[OLE DB Destination Input].Columns[code_home]"
+                      cachedDataType="i4"
+                      cachedName="code_home"
+                      externalMetadataColumnId="Package\Casualty\Casualties_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Casualty_Home_Area_Type_Code]"
+                      lineageId="Package\Casualty\Lookup Casualty home area type label.Outputs[Lookup Match Output].Columns[code_home]" />
+                    <inputColumn
+                      refId="Package\Casualty\Casualties_Stage.Inputs[OLE DB Destination Input].Columns[label_home]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="label_home"
+                      externalMetadataColumnId="Package\Casualty\Casualties_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Casualty_Home_Area_Type]"
+                      lineageId="Package\Casualty\Lookup Casualty home area type label.Outputs[Lookup Match Output].Columns[label_home]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Casualty\Casualties_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Accident_Index]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Accident_Index" />
+                    <externalMetadataColumn
+                      refId="Package\Casualty\Casualties_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Vehicle_Reference]"
+                      dataType="i4"
+                      name="Vehicle_Reference" />
+                    <externalMetadataColumn
+                      refId="Package\Casualty\Casualties_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Casualty_Reference]"
+                      dataType="i4"
+                      name="Casualty_Reference" />
+                    <externalMetadataColumn
+                      refId="Package\Casualty\Casualties_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Casualty_Class_Code]"
+                      dataType="i4"
+                      name="Casualty_Class_Code" />
+                    <externalMetadataColumn
+                      refId="Package\Casualty\Casualties_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Casualty_Class]"
+                      dataType="wstr"
+                      length="255"
+                      name="Casualty_Class" />
+                    <externalMetadataColumn
+                      refId="Package\Casualty\Casualties_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Sex_of_Casualty_Code]"
+                      dataType="i4"
+                      name="Sex_of_Casualty_Code" />
+                    <externalMetadataColumn
+                      refId="Package\Casualty\Casualties_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Sex_of_Casualty]"
+                      dataType="wstr"
+                      length="255"
+                      name="Sex_of_Casualty" />
+                    <externalMetadataColumn
+                      refId="Package\Casualty\Casualties_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Age_of_Casualty_Code]"
+                      dataType="i4"
+                      name="Age_of_Casualty_Code" />
+                    <externalMetadataColumn
+                      refId="Package\Casualty\Casualties_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Age_of_Casualty]"
+                      dataType="wstr"
+                      length="255"
+                      name="Age_of_Casualty" />
+                    <externalMetadataColumn
+                      refId="Package\Casualty\Casualties_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Age_Band_of_Casualty_Code]"
+                      dataType="i4"
+                      name="Age_Band_of_Casualty_Code" />
+                    <externalMetadataColumn
+                      refId="Package\Casualty\Casualties_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Age_Band_of_Casualty]"
+                      dataType="wstr"
+                      length="255"
+                      name="Age_Band_of_Casualty" />
+                    <externalMetadataColumn
+                      refId="Package\Casualty\Casualties_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Casualty_Severity_Code]"
+                      dataType="i4"
+                      name="Casualty_Severity_Code" />
+                    <externalMetadataColumn
+                      refId="Package\Casualty\Casualties_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Casualty_Severity]"
+                      dataType="wstr"
+                      length="255"
+                      name="Casualty_Severity" />
+                    <externalMetadataColumn
+                      refId="Package\Casualty\Casualties_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Casualty_Type_Code]"
+                      dataType="i4"
+                      name="Casualty_Type_Code" />
+                    <externalMetadataColumn
+                      refId="Package\Casualty\Casualties_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Casualty_Type]"
+                      dataType="wstr"
+                      length="255"
+                      name="Casualty_Type" />
+                    <externalMetadataColumn
+                      refId="Package\Casualty\Casualties_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Casualty_Home_Area_Type_Code]"
+                      dataType="i4"
+                      name="Casualty_Home_Area_Type_Code" />
+                    <externalMetadataColumn
+                      refId="Package\Casualty\Casualties_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Casualty_Home_Area_Type]"
+                      dataType="wstr"
+                      length="255"
+                      name="Casualty_Home_Area_Type" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Casualty\Casualties_Stage.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Casualty\Casualties_Stage.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Casualty\Casualties_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Casualty\Casualties_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Casualty\Casualties_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Casualty\Casualties_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Casualty\Casualty DataClean"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Casualty DataClean"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Casualty_DataClean]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select* from Casualty_DataClean where (CreateDate &gt; ? and CreateDate &lt;= ?) or (UpdateDate &gt; ? and UpdateDate &lt;= ?)</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping">"Parameter0:Input",{6C461B28-1BF5-4943-86FA-FA90E008AD91};"Parameter1:Input",{F94FEEC4-E9E8-40A2-BC7C-AAE4AC002333};"Parameter2:Input",{6C461B28-1BF5-4943-86FA-FA90E008AD91};"Parameter3:Input",{F94FEEC4-E9E8-40A2-BC7C-AAE4AC002333};</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Casualty\Casualty DataClean.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[TRANG\SQLDEV2019.UK_Clean_Data]"
+                  connectionManagerRefId="Package.ConnectionManagers[TRANG\SQLDEV2019.UK_Clean_Data]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output].Columns[Accident_Index]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output].ExternalColumns[Accident_Index]"
+                      length="50"
+                      lineageId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output].Columns[Accident_Index]"
+                      name="Accident_Index"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output].Columns[Vehicle_Reference]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output].ExternalColumns[Vehicle_Reference]"
+                      lineageId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output].Columns[Vehicle_Reference]"
+                      name="Vehicle_Reference"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output].Columns[Casualty_Reference]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output].ExternalColumns[Casualty_Reference]"
+                      lineageId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output].Columns[Casualty_Reference]"
+                      name="Casualty_Reference"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output].Columns[Casualty_Class]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output].ExternalColumns[Casualty_Class]"
+                      lineageId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output].Columns[Casualty_Class]"
+                      name="Casualty_Class"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output].Columns[Sex_of_Casualty]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output].ExternalColumns[Sex_of_Casualty]"
+                      lineageId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output].Columns[Sex_of_Casualty]"
+                      name="Sex_of_Casualty"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output].Columns[Age_of_Casualty]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output].ExternalColumns[Age_of_Casualty]"
+                      lineageId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output].Columns[Age_of_Casualty]"
+                      name="Age_of_Casualty"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output].Columns[Age_Band_of_Casualty]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output].ExternalColumns[Age_Band_of_Casualty]"
+                      lineageId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output].Columns[Age_Band_of_Casualty]"
+                      name="Age_Band_of_Casualty"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output].Columns[Casualty_Severity]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output].ExternalColumns[Casualty_Severity]"
+                      lineageId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output].Columns[Casualty_Severity]"
+                      name="Casualty_Severity"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output].Columns[Casualty_Type]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output].ExternalColumns[Casualty_Type]"
+                      lineageId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output].Columns[Casualty_Type]"
+                      name="Casualty_Type"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output].Columns[Casualty_Home_Area_Type]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output].ExternalColumns[Casualty_Home_Area_Type]"
+                      lineageId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output].Columns[Casualty_Home_Area_Type]"
+                      name="Casualty_Home_Area_Type"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output].Columns[CreateDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output].ExternalColumns[CreateDate]"
+                      lineageId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output].Columns[CreateDate]"
+                      name="CreateDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output].Columns[UpdateDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output].ExternalColumns[UpdateDate]"
+                      lineageId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output].Columns[UpdateDate]"
+                      name="UpdateDate"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output].ExternalColumns[Accident_Index]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Accident_Index" />
+                    <externalMetadataColumn
+                      refId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output].ExternalColumns[Vehicle_Reference]"
+                      dataType="i4"
+                      name="Vehicle_Reference" />
+                    <externalMetadataColumn
+                      refId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output].ExternalColumns[Casualty_Reference]"
+                      dataType="i4"
+                      name="Casualty_Reference" />
+                    <externalMetadataColumn
+                      refId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output].ExternalColumns[Casualty_Class]"
+                      dataType="i4"
+                      name="Casualty_Class" />
+                    <externalMetadataColumn
+                      refId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output].ExternalColumns[Sex_of_Casualty]"
+                      dataType="i4"
+                      name="Sex_of_Casualty" />
+                    <externalMetadataColumn
+                      refId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output].ExternalColumns[Age_of_Casualty]"
+                      dataType="i4"
+                      name="Age_of_Casualty" />
+                    <externalMetadataColumn
+                      refId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output].ExternalColumns[Age_Band_of_Casualty]"
+                      dataType="i4"
+                      name="Age_Band_of_Casualty" />
+                    <externalMetadataColumn
+                      refId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output].ExternalColumns[Casualty_Severity]"
+                      dataType="i4"
+                      name="Casualty_Severity" />
+                    <externalMetadataColumn
+                      refId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output].ExternalColumns[Casualty_Type]"
+                      dataType="i4"
+                      name="Casualty_Type" />
+                    <externalMetadataColumn
+                      refId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output].ExternalColumns[Casualty_Home_Area_Type]"
+                      dataType="i4"
+                      name="Casualty_Home_Area_Type" />
+                    <externalMetadataColumn
+                      refId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output].ExternalColumns[CreateDate]"
+                      dataType="dbTimeStamp"
+                      name="CreateDate" />
+                    <externalMetadataColumn
+                      refId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output].ExternalColumns[UpdateDate]"
+                      dataType="dbTimeStamp"
+                      name="UpdateDate" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Error Output].Columns[Accident_Index]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Error Output].Columns[Accident_Index]"
+                      name="Accident_Index" />
+                    <outputColumn
+                      refId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Error Output].Columns[Vehicle_Reference]"
+                      dataType="i4"
+                      lineageId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Error Output].Columns[Vehicle_Reference]"
+                      name="Vehicle_Reference" />
+                    <outputColumn
+                      refId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Error Output].Columns[Casualty_Reference]"
+                      dataType="i4"
+                      lineageId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Error Output].Columns[Casualty_Reference]"
+                      name="Casualty_Reference" />
+                    <outputColumn
+                      refId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Error Output].Columns[Casualty_Class]"
+                      dataType="i4"
+                      lineageId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Error Output].Columns[Casualty_Class]"
+                      name="Casualty_Class" />
+                    <outputColumn
+                      refId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Error Output].Columns[Sex_of_Casualty]"
+                      dataType="i4"
+                      lineageId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Error Output].Columns[Sex_of_Casualty]"
+                      name="Sex_of_Casualty" />
+                    <outputColumn
+                      refId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Error Output].Columns[Age_of_Casualty]"
+                      dataType="i4"
+                      lineageId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Error Output].Columns[Age_of_Casualty]"
+                      name="Age_of_Casualty" />
+                    <outputColumn
+                      refId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Error Output].Columns[Age_Band_of_Casualty]"
+                      dataType="i4"
+                      lineageId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Error Output].Columns[Age_Band_of_Casualty]"
+                      name="Age_Band_of_Casualty" />
+                    <outputColumn
+                      refId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Error Output].Columns[Casualty_Severity]"
+                      dataType="i4"
+                      lineageId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Error Output].Columns[Casualty_Severity]"
+                      name="Casualty_Severity" />
+                    <outputColumn
+                      refId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Error Output].Columns[Casualty_Type]"
+                      dataType="i4"
+                      lineageId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Error Output].Columns[Casualty_Type]"
+                      name="Casualty_Type" />
+                    <outputColumn
+                      refId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Error Output].Columns[Casualty_Home_Area_Type]"
+                      dataType="i4"
+                      lineageId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Error Output].Columns[Casualty_Home_Area_Type]"
+                      name="Casualty_Home_Area_Type" />
+                    <outputColumn
+                      refId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Error Output].Columns[CreateDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Error Output].Columns[CreateDate]"
+                      name="CreateDate" />
+                    <outputColumn
+                      refId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Error Output].Columns[UpdateDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Error Output].Columns[UpdateDate]"
+                      name="UpdateDate" />
+                    <outputColumn
+                      refId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Casualty\Lookup Age Band of Casualty label"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup Age Band of Casualty label"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Age_Band_of_Casualty_Label]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Age_Band_of_Casualty_Label]) [refTable]
+where [refTable].[code] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="code" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="label" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output].Columns[Age_Band_of_Casualty]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Casualty\Lookup Age Band of Casualty label.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[TRANG\SQLDEV2019.UK_Accident_Stage_v2.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[TRANG\SQLDEV2019.UK_Accident_Stage_v2.sa]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Casualty\Lookup Age Band of Casualty label.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Casualty\Lookup Age Band of Casualty label.Inputs[Lookup Input].Columns[Age_Band_of_Casualty]"
+                      cachedDataType="i4"
+                      cachedName="Age_Band_of_Casualty"
+                      lineageId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output].Columns[Age_Band_of_Casualty]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">code</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Casualty\Lookup Age Band of Casualty label.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Casualty\Lookup Age Band of Casualty label.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Casualty\Lookup Age Band of Casualty label.Outputs[Lookup Match Output].Columns[code_band]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Casualty\Lookup Age Band of Casualty label.Outputs[Lookup Match Output].Columns[code_band]"
+                      name="code_band"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">code</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Casualty\Lookup Age Band of Casualty label.Outputs[Lookup Match Output].Columns[label_band]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Copy Column"
+                      length="255"
+                      lineageId="Package\Casualty\Lookup Age Band of Casualty label.Outputs[Lookup Match Output].Columns[label_band]"
+                      name="label_band"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">label</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Casualty\Lookup Age Band of Casualty label.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Casualty\Lookup Age Band of Casualty label.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Casualty\Lookup Age Band of Casualty label.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Casualty\Lookup Age Band of Casualty label.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Casualty\Lookup Age Band of Casualty label.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Casualty\Lookup Age Band of Casualty label.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Casualty\Lookup Age Band of Casualty label.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Casualty\Lookup Age Band of Casualty label.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Casualty\Lookup Age of Casualty"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup Age of Casualty"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Casualty_DataClean]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Casualty_DataClean]) [refTable]
+where [refTable].[Age_of_Casualty] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Accident_Index" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Vehicle_Reference" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Casualty_Reference" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Casualty_Class" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Sex_of_Casualty" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Age_of_Casualty" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Age_Band_of_Casualty" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Casualty_Severity" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Casualty_Type" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Casualty_Home_Area_Type" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CreateDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="UpdateDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output].Columns[Age_of_Casualty]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Casualty\Lookup Age of Casualty.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[TRANG\SQLDEV2019.UK_Clean_Data]"
+                  connectionManagerRefId="Package.ConnectionManagers[TRANG\SQLDEV2019.UK_Clean_Data]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Casualty\Lookup Age of Casualty.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Casualty\Lookup Age of Casualty.Inputs[Lookup Input].Columns[Age_of_Casualty]"
+                      cachedDataType="i4"
+                      cachedName="Age_of_Casualty"
+                      lineageId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output].Columns[Age_of_Casualty]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Age_of_Casualty</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Casualty\Lookup Age of Casualty.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Casualty\Lookup Age of Casualty.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Casualty\Lookup Age of Casualty.Outputs[Lookup Match Output].Columns[Age_of_Casualty_code]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Casualty\Lookup Age of Casualty.Outputs[Lookup Match Output].Columns[Age_of_Casualty_code]"
+                      name="Age_of_Casualty_code"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Age_of_Casualty</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Casualty\Lookup Age of Casualty.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Casualty\Lookup Age of Casualty.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Casualty\Lookup Age of Casualty.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Casualty\Lookup Age of Casualty.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Casualty\Lookup Age of Casualty.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Casualty\Lookup Age of Casualty.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Casualty\Lookup Age of Casualty.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Casualty\Lookup Age of Casualty.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Casualty\Lookup Casual class label"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup Casual class label"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Casualty_Class_Label]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Casualty_Class_Label]) [refTable]
+where [refTable].[code] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="code" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="label" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output].Columns[Casualty_Class]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Casualty\Lookup Casual class label.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[TRANG\SQLDEV2019.UK_Accident_Stage_v2.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[TRANG\SQLDEV2019.UK_Accident_Stage_v2.sa]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Casualty\Lookup Casual class label.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Casualty\Lookup Casual class label.Inputs[Lookup Input].Columns[Casualty_Class]"
+                      cachedDataType="i4"
+                      cachedName="Casualty_Class"
+                      lineageId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output].Columns[Casualty_Class]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">code</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Casualty\Lookup Casual class label.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Casualty\Lookup Casual class label.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Casualty\Lookup Casual class label.Outputs[Lookup Match Output].Columns[code_class]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Casualty\Lookup Casual class label.Outputs[Lookup Match Output].Columns[code_class]"
+                      name="code_class"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">code</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Casualty\Lookup Casual class label.Outputs[Lookup Match Output].Columns[label_class]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Copy Column"
+                      length="255"
+                      lineageId="Package\Casualty\Lookup Casual class label.Outputs[Lookup Match Output].Columns[label_class]"
+                      name="label_class"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">label</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Casualty\Lookup Casual class label.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Casualty\Lookup Casual class label.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Casualty\Lookup Casual class label.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Casualty\Lookup Casual class label.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Casualty\Lookup Casual class label.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Casualty\Lookup Casual class label.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Casualty\Lookup Casual class label.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Casualty\Lookup Casual class label.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Casualty\Lookup Casualty home area type label"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup Casualty home area type label"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Casualty_Home_Area_Type_Label]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Casualty_Home_Area_Type_Label]) [refTable]
+where [refTable].[code] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="code" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="label" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output].Columns[Casualty_Home_Area_Type]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Casualty\Lookup Casualty home area type label.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[TRANG\SQLDEV2019.UK_Accident_Stage_v2.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[TRANG\SQLDEV2019.UK_Accident_Stage_v2.sa]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Casualty\Lookup Casualty home area type label.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Casualty\Lookup Casualty home area type label.Inputs[Lookup Input].Columns[Casualty_Home_Area_Type]"
+                      cachedDataType="i4"
+                      cachedName="Casualty_Home_Area_Type"
+                      lineageId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output].Columns[Casualty_Home_Area_Type]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">code</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Casualty\Lookup Casualty home area type label.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Casualty\Lookup Casualty home area type label.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Casualty\Lookup Casualty home area type label.Outputs[Lookup Match Output].Columns[code_home]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Casualty\Lookup Casualty home area type label.Outputs[Lookup Match Output].Columns[code_home]"
+                      name="code_home"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">code</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Casualty\Lookup Casualty home area type label.Outputs[Lookup Match Output].Columns[label_home]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Copy Column"
+                      length="255"
+                      lineageId="Package\Casualty\Lookup Casualty home area type label.Outputs[Lookup Match Output].Columns[label_home]"
+                      name="label_home"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">label</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Casualty\Lookup Casualty home area type label.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Casualty\Lookup Casualty home area type label.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Casualty\Lookup Casualty home area type label.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Casualty\Lookup Casualty home area type label.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Casualty\Lookup Casualty home area type label.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Casualty\Lookup Casualty home area type label.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Casualty\Lookup Casualty home area type label.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Casualty\Lookup Casualty home area type label.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Casualty\Lookup Casualty severity label"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup Casualty severity label"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Casualty_Severity_Label]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Casualty_Severity_Label]) [refTable]
+where [refTable].[code] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="code" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="label" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output].Columns[Casualty_Severity]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Casualty\Lookup Casualty severity label.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[TRANG\SQLDEV2019.UK_Accident_Stage_v2.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[TRANG\SQLDEV2019.UK_Accident_Stage_v2.sa]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Casualty\Lookup Casualty severity label.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Casualty\Lookup Casualty severity label.Inputs[Lookup Input].Columns[Casualty_Severity]"
+                      cachedDataType="i4"
+                      cachedName="Casualty_Severity"
+                      lineageId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output].Columns[Casualty_Severity]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">code</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Casualty\Lookup Casualty severity label.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Casualty\Lookup Casualty severity label.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Casualty\Lookup Casualty severity label.Outputs[Lookup Match Output].Columns[code_severity]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Casualty\Lookup Casualty severity label.Outputs[Lookup Match Output].Columns[code_severity]"
+                      name="code_severity"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">code</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Casualty\Lookup Casualty severity label.Outputs[Lookup Match Output].Columns[label_severity]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Copy Column"
+                      length="255"
+                      lineageId="Package\Casualty\Lookup Casualty severity label.Outputs[Lookup Match Output].Columns[label_severity]"
+                      name="label_severity"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">label</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Casualty\Lookup Casualty severity label.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Casualty\Lookup Casualty severity label.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Casualty\Lookup Casualty severity label.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Casualty\Lookup Casualty severity label.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Casualty\Lookup Casualty severity label.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Casualty\Lookup Casualty severity label.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Casualty\Lookup Casualty severity label.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Casualty\Lookup Casualty severity label.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Casualty\Lookup Casualty Type label"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup Casualty Type label"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Casualty_Type_Label]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Casualty_Type_Label]) [refTable]
+where [refTable].[code] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="code" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="label" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output].Columns[Casualty_Type]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Casualty\Lookup Casualty Type label.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[TRANG\SQLDEV2019.UK_Accident_Stage_v2.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[TRANG\SQLDEV2019.UK_Accident_Stage_v2.sa]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Casualty\Lookup Casualty Type label.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Casualty\Lookup Casualty Type label.Inputs[Lookup Input].Columns[Casualty_Type]"
+                      cachedDataType="i4"
+                      cachedName="Casualty_Type"
+                      lineageId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output].Columns[Casualty_Type]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">code</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Casualty\Lookup Casualty Type label.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Casualty\Lookup Casualty Type label.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Casualty\Lookup Casualty Type label.Outputs[Lookup Match Output].Columns[code_type]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Casualty\Lookup Casualty Type label.Outputs[Lookup Match Output].Columns[code_type]"
+                      name="code_type"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">code</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Casualty\Lookup Casualty Type label.Outputs[Lookup Match Output].Columns[label_type]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Copy Column"
+                      length="255"
+                      lineageId="Package\Casualty\Lookup Casualty Type label.Outputs[Lookup Match Output].Columns[label_type]"
+                      name="label_type"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">label</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Casualty\Lookup Casualty Type label.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Casualty\Lookup Casualty Type label.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Casualty\Lookup Casualty Type label.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Casualty\Lookup Casualty Type label.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Casualty\Lookup Casualty Type label.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Casualty\Lookup Casualty Type label.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Casualty\Lookup Casualty Type label.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Casualty\Lookup Casualty Type label.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Casualty\Lookup Sex of Casualty"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup Sex of Casualty"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Sex_of_Casualty_Label]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Sex_of_Casualty_Label]) [refTable]
+where [refTable].[code] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="code" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="label" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output].Columns[Sex_of_Casualty]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Casualty\Lookup Sex of Casualty.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[TRANG\SQLDEV2019.UK_Accident_Stage_v2.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[TRANG\SQLDEV2019.UK_Accident_Stage_v2.sa]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Casualty\Lookup Sex of Casualty.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Casualty\Lookup Sex of Casualty.Inputs[Lookup Input].Columns[Sex_of_Casualty]"
+                      cachedDataType="i4"
+                      cachedName="Sex_of_Casualty"
+                      lineageId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output].Columns[Sex_of_Casualty]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">code</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Casualty\Lookup Sex of Casualty.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Casualty\Lookup Sex of Casualty.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Casualty\Lookup Sex of Casualty.Outputs[Lookup Match Output].Columns[code_sex]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Casualty\Lookup Sex of Casualty.Outputs[Lookup Match Output].Columns[code_sex]"
+                      name="code_sex"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">code</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Casualty\Lookup Sex of Casualty.Outputs[Lookup Match Output].Columns[label_sex]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Copy Column"
+                      length="255"
+                      lineageId="Package\Casualty\Lookup Sex of Casualty.Outputs[Lookup Match Output].Columns[label_sex]"
+                      name="label_sex"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">label</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Casualty\Lookup Sex of Casualty.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Casualty\Lookup Sex of Casualty.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Casualty\Lookup Sex of Casualty.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Casualty\Lookup Sex of Casualty.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Casualty\Lookup Sex of Casualty.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Casualty\Lookup Sex of Casualty.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Casualty\Lookup Sex of Casualty.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Casualty\Lookup Sex of Casualty.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Casualty.Paths[Lookup Match Output]"
+              endId="Package\Casualty\Lookup Casualty Type label.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Casualty\Lookup Casual class label.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Casualty.Paths[Lookup Match Output1]"
+              endId="Package\Casualty\Lookup Sex of Casualty.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Casualty\Lookup Casualty Type label.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Casualty.Paths[Lookup Match Output2]"
+              endId="Package\Casualty\Lookup Casualty severity label.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Casualty\Lookup Age Band of Casualty label.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Casualty.Paths[Lookup Match Output3]"
+              endId="Package\Casualty\Lookup Casualty home area type label.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Casualty\Lookup Casualty severity label.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Casualty.Paths[Lookup Match Output4]"
+              endId="Package\Casualty\Lookup Age Band of Casualty label.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Casualty\Lookup Sex of Casualty.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Casualty.Paths[Lookup Match Output5]"
+              endId="Package\Casualty\Lookup Age of Casualty.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Casualty\Lookup Casualty home area type label.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Casualty.Paths[Lookup Match Output6]"
+              endId="Package\Casualty\Casualties_Stage.Inputs[OLE DB Destination Input]"
+              name="Lookup Match Output"
+              startId="Package\Casualty\Lookup Age of Casualty.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Casualty.Paths[OLE DB Source Output]"
+              endId="Package\Casualty\Lookup Casual class label.Inputs[Lookup Input]"
+              name="OLE DB Source Output"
+              startId="Package\Casualty\Casualty DataClean.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Get LSET, CET Casualties_Stage"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{5764dec8-2013-4f91-ad8c-0809e1b006a7}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Get LSET, CET Casualties_Stage"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{71F0B9B5-47E6-4B76-BB17-ED75C30547E5}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="select LSET, CET from Data_Flow where Name = 'Casualties'"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="LSET"
+            SQLTask:DtsVariableName="User::LSET_ca" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="CET"
+            SQLTask:DtsVariableName="User::CET_ca" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Set CET Casualties_Stage"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{4c9bf7e1-3bc6-4bec-ac21-6b5de62a0aa1}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Set CET Casualties_Stage"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{71F0B9B5-47E6-4B76-BB17-ED75C30547E5}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="update Data_Flow set CET = getdate() where Name = 'Casualties'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Set LSET Casualties"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{b7b5d222-a76f-4fbe-a39d-7d75e553c16b}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Set LSET Casualties"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{71F0B9B5-47E6-4B76-BB17-ED75C30547E5}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="update Data_Flow set LSET = CET where Name = ' Casualties'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate table Casualties_Stage"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{81be13e6-d642-4694-9bea-96980a4a89e6}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate table Casualties_Stage"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{30282EB3-45BE-40E3-9254-FD12EC2EA972}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="truncate table Casualties_Stage" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 10]"
+      DTS:CreationName=""
+      DTS:DTSID="{23bcffe7-3c67-4c6c-904b-323f20f4bb2c}"
+      DTS:From="Package\Truncate table Casualties_Stage"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 10"
+      DTS:To="Package\Casualty" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 11]"
+      DTS:CreationName=""
+      DTS:DTSID="{81928c75-7a81-4251-b1d4-2c03e9af1032}"
+      DTS:From="Package\Casualty"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 11"
+      DTS:To="Package\Set LSET Casualties" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 8]"
+      DTS:CreationName=""
+      DTS:DTSID="{3430eaca-241c-4f4e-9483-490c09fd6567}"
+      DTS:From="Package\Set CET Casualties_Stage"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 8"
+      DTS:To="Package\Get LSET, CET Casualties_Stage" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 9]"
+      DTS:CreationName=""
+      DTS:DTSID="{ace4dc64-410c-4805-9e87-958624b7925b}"
+      DTS:From="Package\Get LSET, CET Casualties_Stage"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 9"
+      DTS:To="Package\Truncate table Casualties_Stage" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="119.2,41.6"
+          Id="Package\Casualty"
+          TopLeft="159.959175123765,306.201680871442" />
+        <NodeLayout
+          Size="230.4,41.6"
+          Id="Package\Get LSET, CET Casualties_Stage"
+          TopLeft="94.9591751237651,155.201680871442" />
+        <NodeLayout
+          Size="199.2,41.6"
+          Id="Package\Set CET Casualties_Stage"
+          TopLeft="117.959175123765,74.2016808714421" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Set LSET Casualties"
+          TopLeft="135.959175123765,375.201680871442" />
+        <NodeLayout
+          Size="230.4,41.6"
+          Id="Package\Truncate table Casualties_Stage"
+          TopLeft="97.9591751237651,226.201680871442" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 10]"
+          TopLeft="216.209175123765,268.201680871442">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38"
+              Start="0,0"
+              End="0,30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 11]"
+          TopLeft="220.459175123765,348.201680871442">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27"
+              Start="0,0"
+              End="0,19.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 8]"
+          TopLeft="213.709175123765,116.201680871442">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39"
+              Start="0,0"
+              End="0,31.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 9]"
+          TopLeft="211.459175123765,197.201680871442">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29"
+              Start="0,0"
+              End="0,21.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Casualty">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="259,42"
+          Id="Package\Casualty\Lookup Casualty home area type label"
+          TopLeft="374.5,291.5" />
+        <NodeLayout
+          Size="189,42"
+          Id="Package\Casualty\Lookup Sex of Casualty"
+          TopLeft="647,173" />
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Casualty\Casualty DataClean"
+          TopLeft="157,64" />
+        <NodeLayout
+          Size="221,42"
+          Id="Package\Casualty\Lookup Casualty severity label"
+          TopLeft="95,286" />
+        <NodeLayout
+          Size="198,42"
+          Id="Package\Casualty\Lookup Casual class label"
+          TopLeft="375,64" />
+        <NodeLayout
+          Size="242,42"
+          Id="Package\Casualty\Lookup Age Band of Casualty label"
+          TopLeft="84,180" />
+        <NodeLayout
+          Size="208,42"
+          Id="Package\Casualty\Lookup Casualty Type label"
+          TopLeft="639,64" />
+        <EdgeLayout
+          Id="Package\Casualty.Paths[OLE DB Source Output]"
+          TopLeft="327,85">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="48,0"
+              Start="0,0"
+              End="40.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="40.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Casualty.Paths[Lookup Match Output4]"
+          TopLeft="647,197.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-321,0"
+              Start="0,0"
+              End="-313.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-313.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-204.94138671875,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Casualty.Paths[Lookup Match Output3]"
+          TopLeft="316,309.75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="58.5,0"
+              Start="0,0"
+              End="51,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="51,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-22.69138671875,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Casualty.Paths[Lookup Match Output2]"
+          TopLeft="205.25,222">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,64"
+              Start="0,0"
+              End="0,56.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,56.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,22.4453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Casualty.Paths[Lookup Match Output1]"
+          TopLeft="742.25,106">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,67"
+              Start="0,0"
+              End="0,59.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,59.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,23.9453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Casualty.Paths[Lookup Match Output]"
+          TopLeft="573,85">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="66,0"
+              Start="0,0"
+              End="58.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="58.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-18.94138671875,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="159,42"
+          Id="Package\Casualty\Casualties_Stage"
+          TopLeft="803,296" />
+        <NodeLayout
+          Size="190,42"
+          Id="Package\Casualty\Lookup Age of Casualty"
+          TopLeft="621,354" />
+        <EdgeLayout
+          Id="Package\Casualty.Paths[Lookup Match Output5]"
+          TopLeft="633.5,312.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="52.1666666666666,41.5"
+              Start="0,0"
+              End="52.1666666666666,34">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="48.1666666666666,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="48.1666666666666,0"
+                    Point2="52.1666666666666,0"
+                    Point3="52.1666666666666,4" />
+                  <mssgle:LineSegment
+                    End="52.1666666666666,34" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="3.97527994791663,-17.609375,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Casualty.Paths[Lookup Match Output6]"
+          TopLeft="746.333333333333,354">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="56.6666666666666,-37"
+              Start="0,0"
+              End="49.1666666666666,-37">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-33" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-33"
+                    Point2="0,-37"
+                    Point3="4,-37" />
+                  <mssgle:LineSegment
+                    End="49.1666666666666,-37" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-21.6080533854167,-32,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Casualty\Lookup Casualty Type label">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Casualty_Type_Label]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Casualty\Lookup Casualty home area type label">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Casualty_Home_Area_Type_Label]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Casualty\Casualty DataClean">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Casualty\Lookup Age of Casualty">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Casualty_DataClean]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Casualty\Lookup Sex of Casualty">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Sex_of_Casualty_Label]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Casualty\Lookup Casualty severity label">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Casualty_Severity_Label]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Casualty\Lookup Age Band of Casualty label">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Age_Band_of_Casualty_Label]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Casualty\Lookup Casual class label">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Casualty_Class_Label]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Casualty\Casualties_Stage">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
