@@ -11,11 +11,35 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="4"
-  DTS:VersionGUID="{FB71F65B-55A6-4FB3-875A-51543A3B37AB}">
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{50A47C1B-E88C-4F43-9FEE-25C673183BE9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-7S8OMU5\QTHO.UK_Accident_NDS_v2]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{2012D5BC-5318-4AEE-825B-83F9345521E1}"
+      DTS:ObjectName="DESKTOP-7S8OMU5\QTHO.UK_Accident_NDS_v2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-7S8OMU5\QTHO;Initial Catalog=UK_Accident_NDS_v2;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-7S8OMU5\QTHO.UK_Accident_Stage_v2]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{A073FF89-CFEC-45B5-8999-7741B5989475}"
+      DTS:ObjectName="DESKTOP-7S8OMU5\QTHO.UK_Accident_Stage_v2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-7S8OMU5\QTHO;Initial Catalog=UK_Accident_Stage_v2;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[TRANG\SQLDEV2019.UK_Accident_NDS_v2.sa]"
       DTS:CreationName="OLEDB"
@@ -4066,6 +4090,1141 @@ where [refTable].[postcode] = ?</property>
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Vehicles"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{39101b14-b43a-486d-80a3-ebb6566bd9dc}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Vehicles"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Vehicles\Add CreateDate, UpdateDate column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Add CreateDate, UpdateDate column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Vehicles\Add CreateDate, UpdateDate column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Vehicles\Add CreateDate, UpdateDate column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Vehicles\Add CreateDate, UpdateDate column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Vehicles\Add CreateDate, UpdateDate column.Outputs[Derived Column Output].Columns[CreateDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Vehicles\Add CreateDate, UpdateDate column.Outputs[Derived Column Output].Columns[CreateDate]"
+                      name="CreateDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Vehicles\Add CreateDate, UpdateDate column.Outputs[Derived Column Output].Columns[UpdateDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Vehicles\Add CreateDate, UpdateDate column.Outputs[Derived Column Output].Columns[UpdateDate]"
+                      name="UpdateDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Vehicles\Add CreateDate, UpdateDate column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Vehicles\Add CreateDate, UpdateDate column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Vehicles\Add CreateDate, UpdateDate column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Vehicles\Add CreateDate, UpdateDate column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Vehicles\Add CreateDate, UpdateDate column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Vehicles\Add CreateDate, UpdateDate column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Vehicles\Add UpdateDate column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Add UpdateDate column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Vehicles\Add UpdateDate column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Vehicles\Add UpdateDate column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Vehicles\Add UpdateDate column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Vehicles\Add UpdateDate column.Outputs[Derived Column Output].Columns[UpdateDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Vehicles\Add UpdateDate column.Outputs[Derived Column Output].Columns[UpdateDate]"
+                      name="UpdateDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Vehicles\Add UpdateDate column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Vehicles\Add UpdateDate column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Vehicles\Add UpdateDate column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Vehicles\Add UpdateDate column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Vehicles\Add UpdateDate column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Vehicles\Add UpdateDate column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Vehicles\Insert new data"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Insert new data"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Vehicles_NDS]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Vehicles\Insert new data.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-7S8OMU5\QTHO.UK_Accident_NDS_v2]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-7S8OMU5\QTHO.UK_Accident_NDS_v2]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Vehicles\Insert new data.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Vehicles\Insert new data.Inputs[OLE DB Destination Input].Columns[Vehicle_Reference]"
+                      cachedDataType="i4"
+                      cachedName="Vehicle_Reference"
+                      externalMetadataColumnId="Package\Vehicles\Insert new data.Inputs[OLE DB Destination Input].ExternalColumns[Vehicle_Reference]"
+                      lineageId="Package\Vehicles\Vehicles_Stage.Outputs[OLE DB Source Output].Columns[Vehicle_Reference]" />
+                    <inputColumn
+                      refId="Package\Vehicles\Insert new data.Inputs[OLE DB Destination Input].Columns[Journey_Purpose_of_Driver]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Journey_Purpose_of_Driver"
+                      externalMetadataColumnId="Package\Vehicles\Insert new data.Inputs[OLE DB Destination Input].ExternalColumns[Journey_Purpose_of_Driver]"
+                      lineageId="Package\Vehicles\Vehicles_Stage.Outputs[OLE DB Source Output].Columns[Journey_Purpose_of_Driver]" />
+                    <inputColumn
+                      refId="Package\Vehicles\Insert new data.Inputs[OLE DB Destination Input].Columns[Vehicle_Type]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Vehicle_Type"
+                      externalMetadataColumnId="Package\Vehicles\Insert new data.Inputs[OLE DB Destination Input].ExternalColumns[Vehicles_Type]"
+                      lineageId="Package\Vehicles\Vehicles_Stage.Outputs[OLE DB Source Output].Columns[Vehicle_Type]" />
+                    <inputColumn
+                      refId="Package\Vehicles\Insert new data.Inputs[OLE DB Destination Input].Columns[CreateDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="CreateDate"
+                      externalMetadataColumnId="Package\Vehicles\Insert new data.Inputs[OLE DB Destination Input].ExternalColumns[CreatDate]"
+                      lineageId="Package\Vehicles\Add CreateDate, UpdateDate column.Outputs[Derived Column Output].Columns[CreateDate]" />
+                    <inputColumn
+                      refId="Package\Vehicles\Insert new data.Inputs[OLE DB Destination Input].Columns[UpdateDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="UpdateDate"
+                      externalMetadataColumnId="Package\Vehicles\Insert new data.Inputs[OLE DB Destination Input].ExternalColumns[UpdateDate]"
+                      lineageId="Package\Vehicles\Add CreateDate, UpdateDate column.Outputs[Derived Column Output].Columns[UpdateDate]" />
+                    <inputColumn
+                      refId="Package\Vehicles\Insert new data.Inputs[OLE DB Destination Input].Columns[Accident_Index_SK]"
+                      cachedDataType="i4"
+                      cachedName="Accident_Index_SK"
+                      externalMetadataColumnId="Package\Vehicles\Insert new data.Inputs[OLE DB Destination Input].ExternalColumns[Accident_Index]"
+                      lineageId="Package\Vehicles\Lookup Accident_Index.Outputs[Lookup Match Output].Columns[Accident_Index_SK]" />
+                    <inputColumn
+                      refId="Package\Vehicles\Insert new data.Inputs[OLE DB Destination Input].Columns[Vehicle_Type_Code]"
+                      cachedDataType="i4"
+                      cachedName="Vehicle_Type_Code"
+                      externalMetadataColumnId="Package\Vehicles\Insert new data.Inputs[OLE DB Destination Input].ExternalColumns[Vehicles_Type_Code]"
+                      lineageId="Package\Vehicles\Vehicles_Stage.Outputs[OLE DB Source Output].Columns[Vehicle_Type_Code]" />
+                    <inputColumn
+                      refId="Package\Vehicles\Insert new data.Inputs[OLE DB Destination Input].Columns[Journey_Purpose_of_Driver_Code]"
+                      cachedDataType="i4"
+                      cachedName="Journey_Purpose_of_Driver_Code"
+                      externalMetadataColumnId="Package\Vehicles\Insert new data.Inputs[OLE DB Destination Input].ExternalColumns[Journey_Purpose_of_Driver_Code]"
+                      lineageId="Package\Vehicles\Vehicles_Stage.Outputs[OLE DB Source Output].Columns[Journey_Purpose_of_Driver_Code]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Vehicles\Insert new data.Inputs[OLE DB Destination Input].ExternalColumns[Vehicle_SK]"
+                      dataType="i4"
+                      name="Vehicle_SK" />
+                    <externalMetadataColumn
+                      refId="Package\Vehicles\Insert new data.Inputs[OLE DB Destination Input].ExternalColumns[Accident_Index]"
+                      dataType="i4"
+                      name="Accident_Index" />
+                    <externalMetadataColumn
+                      refId="Package\Vehicles\Insert new data.Inputs[OLE DB Destination Input].ExternalColumns[Vehicle_Reference]"
+                      dataType="i4"
+                      name="Vehicle_Reference" />
+                    <externalMetadataColumn
+                      refId="Package\Vehicles\Insert new data.Inputs[OLE DB Destination Input].ExternalColumns[Vehicles_Type]"
+                      dataType="wstr"
+                      length="255"
+                      name="Vehicles_Type" />
+                    <externalMetadataColumn
+                      refId="Package\Vehicles\Insert new data.Inputs[OLE DB Destination Input].ExternalColumns[Journey_Purpose_of_Driver]"
+                      dataType="wstr"
+                      length="255"
+                      name="Journey_Purpose_of_Driver" />
+                    <externalMetadataColumn
+                      refId="Package\Vehicles\Insert new data.Inputs[OLE DB Destination Input].ExternalColumns[CreatDate]"
+                      dataType="dbTimeStamp"
+                      name="CreatDate" />
+                    <externalMetadataColumn
+                      refId="Package\Vehicles\Insert new data.Inputs[OLE DB Destination Input].ExternalColumns[UpdateDate]"
+                      dataType="dbTimeStamp"
+                      name="UpdateDate" />
+                    <externalMetadataColumn
+                      refId="Package\Vehicles\Insert new data.Inputs[OLE DB Destination Input].ExternalColumns[Vehicles_Type_Code]"
+                      dataType="i4"
+                      name="Vehicles_Type_Code" />
+                    <externalMetadataColumn
+                      refId="Package\Vehicles\Insert new data.Inputs[OLE DB Destination Input].ExternalColumns[Journey_Purpose_of_Driver_Code]"
+                      dataType="i4"
+                      name="Journey_Purpose_of_Driver_Code" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Vehicles\Insert new data.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Vehicles\Insert new data.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Vehicles\Insert new data.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Vehicles\Insert new data.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Vehicles\Insert new data.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Vehicles\Insert new data.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Vehicles\Lookup  Accident_Index, Vehicle_References"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup  Accident_Index, Vehicle_References"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select Accident_Index, Vehicle_reference from Vehicles_NDS</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select Accident_Index, Vehicle_reference from Vehicles_NDS) [refTable]
+where [refTable].[Vehicle_reference] = ? and [refTable].[Accident_Index] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Accident_Index" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Vehicle_reference" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Vehicles\Vehicles_Stage.Outputs[OLE DB Source Output].Columns[Vehicle_Reference]};#{Package\Vehicles\Lookup Accident_Index.Outputs[Lookup Match Output].Columns[Accident_Index_SK]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Vehicles\Lookup  Accident_Index, Vehicle_References.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-7S8OMU5\QTHO.UK_Accident_NDS_v2]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-7S8OMU5\QTHO.UK_Accident_NDS_v2]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Vehicles\Lookup  Accident_Index, Vehicle_References.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Vehicles\Lookup  Accident_Index, Vehicle_References.Inputs[Lookup Input].Columns[Vehicle_Reference]"
+                      cachedDataType="i4"
+                      cachedName="Vehicle_Reference"
+                      lineageId="Package\Vehicles\Vehicles_Stage.Outputs[OLE DB Source Output].Columns[Vehicle_Reference]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Vehicle_reference</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Vehicles\Lookup  Accident_Index, Vehicle_References.Inputs[Lookup Input].Columns[Accident_Index_SK]"
+                      cachedDataType="i4"
+                      cachedName="Accident_Index_SK"
+                      lineageId="Package\Vehicles\Lookup Accident_Index.Outputs[Lookup Match Output].Columns[Accident_Index_SK]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Accident_Index</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Vehicles\Lookup  Accident_Index, Vehicle_References.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Vehicles\Lookup  Accident_Index, Vehicle_References.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Vehicles\Lookup  Accident_Index, Vehicle_References.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Vehicles\Lookup  Accident_Index, Vehicle_References.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Vehicles\Lookup  Accident_Index, Vehicle_References.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Vehicles\Lookup  Accident_Index, Vehicle_References.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Vehicles\Lookup  Accident_Index, Vehicle_References.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Vehicles\Lookup  Accident_Index, Vehicle_References.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Vehicles\Lookup  Accident_Index, Vehicle_References.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Vehicles\Lookup  Accident_Index, Vehicle_References.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Vehicles\Lookup Accident_Index"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup Accident_Index"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select Accident_Index_SK, Accident_Index from Accidents_NDS</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select Accident_Index_SK, Accident_Index from Accidents_NDS) [refTable]
+where [refTable].[Accident_Index] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Accident_Index_SK" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Accident_Index" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Vehicles\Vehicles_Stage.Outputs[OLE DB Source Output].Columns[Accident_Index]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Vehicles\Lookup Accident_Index.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-7S8OMU5\QTHO.UK_Accident_NDS_v2]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-7S8OMU5\QTHO.UK_Accident_NDS_v2]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Vehicles\Lookup Accident_Index.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Vehicles\Lookup Accident_Index.Inputs[Lookup Input].Columns[Accident_Index]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Accident_Index"
+                      lineageId="Package\Vehicles\Vehicles_Stage.Outputs[OLE DB Source Output].Columns[Accident_Index]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Accident_Index</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Vehicles\Lookup Accident_Index.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Vehicles\Lookup Accident_Index.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Vehicles\Lookup Accident_Index.Outputs[Lookup Match Output].Columns[Accident_Index_SK]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Vehicles\Lookup Accident_Index.Outputs[Lookup Match Output].Columns[Accident_Index_SK]"
+                      name="Accident_Index_SK"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Accident_Index_SK</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Vehicles\Lookup Accident_Index.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Vehicles\Lookup Accident_Index.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Vehicles\Lookup Accident_Index.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Vehicles\Lookup Accident_Index.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Vehicles\Lookup Accident_Index.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Vehicles\Lookup Accident_Index.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Vehicles\Lookup Accident_Index.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Vehicles\Lookup Accident_Index.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Vehicles\Update existing data"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="Update existing data"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">update Vehicles_NDS set [Vehicles_Type_Code] =?,[Vehicles_Type]=?,[Journey_Purpose_of_Driver_Code] =?, [Journey_Purpose_of_Driver]=?,[UpdateDate]=? where [Accident_Index]=? and [Vehicle_Reference] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Vehicles\Update existing data.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-7S8OMU5\QTHO.UK_Accident_NDS_v2]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-7S8OMU5\QTHO.UK_Accident_NDS_v2]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Vehicles\Update existing data.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Vehicles\Update existing data.Inputs[OLE DB Command Input].Columns[Vehicle_Type_Code]"
+                      cachedDataType="i4"
+                      cachedName="Vehicle_Type_Code"
+                      externalMetadataColumnId="Package\Vehicles\Update existing data.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Vehicles\Vehicles_Stage.Outputs[OLE DB Source Output].Columns[Vehicle_Type_Code]" />
+                    <inputColumn
+                      refId="Package\Vehicles\Update existing data.Inputs[OLE DB Command Input].Columns[Vehicle_Type]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Vehicle_Type"
+                      externalMetadataColumnId="Package\Vehicles\Update existing data.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Vehicles\Vehicles_Stage.Outputs[OLE DB Source Output].Columns[Vehicle_Type]" />
+                    <inputColumn
+                      refId="Package\Vehicles\Update existing data.Inputs[OLE DB Command Input].Columns[Journey_Purpose_of_Driver_Code]"
+                      cachedDataType="i4"
+                      cachedName="Journey_Purpose_of_Driver_Code"
+                      externalMetadataColumnId="Package\Vehicles\Update existing data.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\Vehicles\Vehicles_Stage.Outputs[OLE DB Source Output].Columns[Journey_Purpose_of_Driver_Code]" />
+                    <inputColumn
+                      refId="Package\Vehicles\Update existing data.Inputs[OLE DB Command Input].Columns[Journey_Purpose_of_Driver]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Journey_Purpose_of_Driver"
+                      externalMetadataColumnId="Package\Vehicles\Update existing data.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\Vehicles\Vehicles_Stage.Outputs[OLE DB Source Output].Columns[Journey_Purpose_of_Driver]" />
+                    <inputColumn
+                      refId="Package\Vehicles\Update existing data.Inputs[OLE DB Command Input].Columns[UpdateDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="UpdateDate"
+                      externalMetadataColumnId="Package\Vehicles\Update existing data.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      lineageId="Package\Vehicles\Add UpdateDate column.Outputs[Derived Column Output].Columns[UpdateDate]" />
+                    <inputColumn
+                      refId="Package\Vehicles\Update existing data.Inputs[OLE DB Command Input].Columns[Accident_Index_SK]"
+                      cachedDataType="i4"
+                      cachedName="Accident_Index_SK"
+                      externalMetadataColumnId="Package\Vehicles\Update existing data.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      lineageId="Package\Vehicles\Lookup Accident_Index.Outputs[Lookup Match Output].Columns[Accident_Index_SK]" />
+                    <inputColumn
+                      refId="Package\Vehicles\Update existing data.Inputs[OLE DB Command Input].Columns[Vehicle_Reference]"
+                      cachedDataType="i4"
+                      cachedName="Vehicle_Reference"
+                      externalMetadataColumnId="Package\Vehicles\Update existing data.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      lineageId="Package\Vehicles\Vehicles_Stage.Outputs[OLE DB Source Output].Columns[Vehicle_Reference]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Vehicles\Update existing data.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="i4"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Vehicles\Update existing data.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="wstr"
+                      length="255"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Vehicles\Update existing data.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      dataType="i4"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Vehicles\Update existing data.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      dataType="wstr"
+                      length="255"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Vehicles\Update existing data.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      dataType="dbTimeStamp"
+                      name="Param_4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Vehicles\Update existing data.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      dataType="i4"
+                      name="Param_5">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Vehicles\Update existing data.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      dataType="i4"
+                      name="Param_6">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Vehicles\Update existing data.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Vehicles\Update existing data.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Vehicles\Update existing data.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Vehicles\Update existing data.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Vehicles\Update existing data.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Vehicles\Update existing data.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Vehicles\Update existing data.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Vehicles\Update existing data.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Vehicles\Vehicles_Stage"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Vehicles_Stage"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Vehicles_Stage]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Vehicles\Vehicles_Stage.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-7S8OMU5\QTHO.UK_Accident_Stage_v2]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-7S8OMU5\QTHO.UK_Accident_Stage_v2]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Vehicles\Vehicles_Stage.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Vehicles\Vehicles_Stage.Outputs[OLE DB Source Output].Columns[Accident_Index]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Vehicles\Vehicles_Stage.Outputs[OLE DB Source Output].ExternalColumns[Accident_Index]"
+                      length="50"
+                      lineageId="Package\Vehicles\Vehicles_Stage.Outputs[OLE DB Source Output].Columns[Accident_Index]"
+                      name="Accident_Index"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Vehicles\Vehicles_Stage.Outputs[OLE DB Source Output].Columns[Vehicle_Reference]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Vehicles\Vehicles_Stage.Outputs[OLE DB Source Output].ExternalColumns[Vehicle_Reference]"
+                      lineageId="Package\Vehicles\Vehicles_Stage.Outputs[OLE DB Source Output].Columns[Vehicle_Reference]"
+                      name="Vehicle_Reference"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Vehicles\Vehicles_Stage.Outputs[OLE DB Source Output].Columns[Vehicle_Type]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Vehicles\Vehicles_Stage.Outputs[OLE DB Source Output].ExternalColumns[Vehicle_Type]"
+                      length="255"
+                      lineageId="Package\Vehicles\Vehicles_Stage.Outputs[OLE DB Source Output].Columns[Vehicle_Type]"
+                      name="Vehicle_Type"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Vehicles\Vehicles_Stage.Outputs[OLE DB Source Output].Columns[Journey_Purpose_of_Driver]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Vehicles\Vehicles_Stage.Outputs[OLE DB Source Output].ExternalColumns[Journey_Purpose_of_Driver]"
+                      length="255"
+                      lineageId="Package\Vehicles\Vehicles_Stage.Outputs[OLE DB Source Output].Columns[Journey_Purpose_of_Driver]"
+                      name="Journey_Purpose_of_Driver"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Vehicles\Vehicles_Stage.Outputs[OLE DB Source Output].Columns[Vehicle_Type_Code]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Vehicles\Vehicles_Stage.Outputs[OLE DB Source Output].ExternalColumns[Vehicle_Type_Code]"
+                      lineageId="Package\Vehicles\Vehicles_Stage.Outputs[OLE DB Source Output].Columns[Vehicle_Type_Code]"
+                      name="Vehicle_Type_Code"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Vehicles\Vehicles_Stage.Outputs[OLE DB Source Output].Columns[Journey_Purpose_of_Driver_Code]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Vehicles\Vehicles_Stage.Outputs[OLE DB Source Output].ExternalColumns[Journey_Purpose_of_Driver_Code]"
+                      lineageId="Package\Vehicles\Vehicles_Stage.Outputs[OLE DB Source Output].Columns[Journey_Purpose_of_Driver_Code]"
+                      name="Journey_Purpose_of_Driver_Code"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Vehicles\Vehicles_Stage.Outputs[OLE DB Source Output].ExternalColumns[Accident_Index]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Accident_Index" />
+                    <externalMetadataColumn
+                      refId="Package\Vehicles\Vehicles_Stage.Outputs[OLE DB Source Output].ExternalColumns[Vehicle_Reference]"
+                      dataType="i4"
+                      name="Vehicle_Reference" />
+                    <externalMetadataColumn
+                      refId="Package\Vehicles\Vehicles_Stage.Outputs[OLE DB Source Output].ExternalColumns[Vehicle_Type]"
+                      dataType="wstr"
+                      length="255"
+                      name="Vehicle_Type" />
+                    <externalMetadataColumn
+                      refId="Package\Vehicles\Vehicles_Stage.Outputs[OLE DB Source Output].ExternalColumns[Journey_Purpose_of_Driver]"
+                      dataType="wstr"
+                      length="255"
+                      name="Journey_Purpose_of_Driver" />
+                    <externalMetadataColumn
+                      refId="Package\Vehicles\Vehicles_Stage.Outputs[OLE DB Source Output].ExternalColumns[Vehicle_Type_Code]"
+                      dataType="i4"
+                      name="Vehicle_Type_Code" />
+                    <externalMetadataColumn
+                      refId="Package\Vehicles\Vehicles_Stage.Outputs[OLE DB Source Output].ExternalColumns[Journey_Purpose_of_Driver_Code]"
+                      dataType="i4"
+                      name="Journey_Purpose_of_Driver_Code" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Vehicles\Vehicles_Stage.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Vehicles\Vehicles_Stage.Outputs[OLE DB Source Error Output].Columns[Accident_Index]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Vehicles\Vehicles_Stage.Outputs[OLE DB Source Error Output].Columns[Accident_Index]"
+                      name="Accident_Index" />
+                    <outputColumn
+                      refId="Package\Vehicles\Vehicles_Stage.Outputs[OLE DB Source Error Output].Columns[Vehicle_Reference]"
+                      dataType="i4"
+                      lineageId="Package\Vehicles\Vehicles_Stage.Outputs[OLE DB Source Error Output].Columns[Vehicle_Reference]"
+                      name="Vehicle_Reference" />
+                    <outputColumn
+                      refId="Package\Vehicles\Vehicles_Stage.Outputs[OLE DB Source Error Output].Columns[Vehicle_Type_Code]"
+                      dataType="i4"
+                      lineageId="Package\Vehicles\Vehicles_Stage.Outputs[OLE DB Source Error Output].Columns[Vehicle_Type_Code]"
+                      name="Vehicle_Type_Code" />
+                    <outputColumn
+                      refId="Package\Vehicles\Vehicles_Stage.Outputs[OLE DB Source Error Output].Columns[Vehicle_Type]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Vehicles\Vehicles_Stage.Outputs[OLE DB Source Error Output].Columns[Vehicle_Type]"
+                      name="Vehicle_Type" />
+                    <outputColumn
+                      refId="Package\Vehicles\Vehicles_Stage.Outputs[OLE DB Source Error Output].Columns[Journey_Purpose_of_Driver_Code]"
+                      dataType="i4"
+                      lineageId="Package\Vehicles\Vehicles_Stage.Outputs[OLE DB Source Error Output].Columns[Journey_Purpose_of_Driver_Code]"
+                      name="Journey_Purpose_of_Driver_Code" />
+                    <outputColumn
+                      refId="Package\Vehicles\Vehicles_Stage.Outputs[OLE DB Source Error Output].Columns[Journey_Purpose_of_Driver]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Vehicles\Vehicles_Stage.Outputs[OLE DB Source Error Output].Columns[Journey_Purpose_of_Driver]"
+                      name="Journey_Purpose_of_Driver" />
+                    <outputColumn
+                      refId="Package\Vehicles\Vehicles_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Vehicles\Vehicles_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Vehicles\Vehicles_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Vehicles\Vehicles_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Vehicles.Paths[Derived Column Output]"
+              endId="Package\Vehicles\Update existing data.Inputs[OLE DB Command Input]"
+              name="Derived Column Output"
+              startId="Package\Vehicles\Add UpdateDate column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Vehicles.Paths[Derived Column Output1]"
+              endId="Package\Vehicles\Insert new data.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Vehicles\Add CreateDate, UpdateDate column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Vehicles.Paths[Lookup Match Output]"
+              endId="Package\Vehicles\Lookup  Accident_Index, Vehicle_References.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Vehicles\Lookup Accident_Index.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Vehicles.Paths[Lookup Match Output1]"
+              endId="Package\Vehicles\Add UpdateDate column.Inputs[Derived Column Input]"
+              name="Lookup Match Output"
+              startId="Package\Vehicles\Lookup  Accident_Index, Vehicle_References.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Vehicles.Paths[Lookup No Match Output]"
+              endId="Package\Vehicles\Add CreateDate, UpdateDate column.Inputs[Derived Column Input]"
+              name="Lookup No Match Output"
+              startId="Package\Vehicles\Lookup  Accident_Index, Vehicle_References.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\Vehicles.Paths[OLE DB Source Output]"
+              endId="Package\Vehicles\Lookup Accident_Index.Inputs[Lookup Input]"
+              name="OLE DB Source Output"
+              startId="Package\Vehicles\Vehicles_Stage.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
@@ -4088,7 +5247,11 @@ where [refTable].[postcode] = ?</property>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="123,42"
+          Id="Package\Accidents"
+          TopLeft="306,73" />
         <NodeLayout
           Size="198,42"
           Id="Package\LSOA_Postcode_Mapping"
@@ -4132,12 +5295,182 @@ where [refTable].[postcode] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="123,42"
-          Id="Package\Accidents"
-          TopLeft="306,73" />
+          Size="117,42"
+          Id="Package\Vehicles"
+          TopLeft="340,161" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
+  <TaskHost
+    design-time-name="Package\Accidents">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="189,42"
+          Id="Package\Accidents\Lookup Accident_Index"
+          TopLeft="336,155" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Accidents\Insert new data"
+          TopLeft="593,347" />
+        <NodeLayout
+          Size="253,42"
+          Id="Package\Accidents\Add CreateDate, UpdateDate column"
+          TopLeft="538,268" />
+        <NodeLayout
+          Size="193,42"
+          Id="Package\Accidents\Add UpdateDate column"
+          TopLeft="209,267" />
+        <NodeLayout
+          Size="176,42"
+          Id="Package\Accidents\Update existing data"
+          TopLeft="222,347" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Accidents\Accidents_Stage"
+          TopLeft="347,60" />
+        <EdgeLayout
+          Id="Package\Accidents.Paths[Derived Column Output]"
+          TopLeft="307.75,309">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38"
+              Start="0,0"
+              End="0,30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Accidents.Paths[OLE DB Source Output]"
+          TopLeft="427.75,102">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,53"
+              Start="0,0"
+              End="0,45.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Accidents.Paths[Lookup No Match Output]"
+          TopLeft="460.666666666667,197">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="203.833333333333,71"
+              Start="0,0"
+              End="203.833333333333,63.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.7576075550892" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.7576075550892"
+                    Point2="0,28.7576075550892"
+                    Point3="4,28.7576075550892" />
+                  <mssgle:LineSegment
+                    End="199.833333333333,28.7576075550892" />
+                  <mssgle:CubicBezierSegment
+                    Point1="199.833333333333,28.7576075550892"
+                    Point2="203.833333333333,28.7576075550892"
+                    Point3="203.833333333333,32.7576075550892" />
+                  <mssgle:LineSegment
+                    End="203.833333333333,63.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="46.1102799479167,33.7576075550892,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Accidents.Paths[Lookup Match Output]"
+          TopLeft="400.333333333333,197">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-94.8333333333333,70"
+              Start="0,0"
+              End="-94.8333333333333,62.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.3525708289612" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.3525708289612"
+                    Point2="0,28.3525708289612"
+                    Point3="-4,28.3525708289612" />
+                  <mssgle:LineSegment
+                    End="-90.8333333333333,28.3525708289612" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-90.8333333333333,28.3525708289612"
+                    Point2="-94.8333333333333,28.3525708289612"
+                    Point3="-94.8333333333333,32.3525708289612" />
+                  <mssgle:LineSegment
+                    End="-94.8333333333333,62.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-95.6080533854167,33.3525708289612,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Accidents.Paths[Derived Column Output1]"
+          TopLeft="667.25,310">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37"
+              Start="0,0"
+              End="0,29.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
   <TaskHost
     design-time-name="Package\LSOA_Postcode_Mapping">
     <LayoutInfo>
@@ -4579,170 +5912,204 @@ where [refTable].[postcode] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <TaskHost
-    design-time-name="Package\Accidents">
+    design-time-name="Package\Vehicles">
     <LayoutInfo>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="189,42"
-          Id="Package\Accidents\Lookup Accident_Index"
-          TopLeft="336,155" />
-        <NodeLayout
-          Size="154,42"
-          Id="Package\Accidents\Insert new data"
-          TopLeft="593,347" />
-        <NodeLayout
-          Size="253,42"
-          Id="Package\Accidents\Add CreateDate, UpdateDate column"
-          TopLeft="538,268" />
+          Id="Package\Vehicles\Lookup Accident_Index"
+          TopLeft="347,146" />
         <NodeLayout
           Size="193,42"
-          Id="Package\Accidents\Add UpdateDate column"
-          TopLeft="209,267" />
+          Id="Package\Vehicles\Add UpdateDate column"
+          TopLeft="149,340" />
         <NodeLayout
           Size="176,42"
-          Id="Package\Accidents\Update existing data"
-          TopLeft="222,347" />
+          Id="Package\Vehicles\Update existing data"
+          TopLeft="150,440" />
         <NodeLayout
-          Size="156,42"
-          Id="Package\Accidents\Accidents_Stage"
-          TopLeft="347,60" />
+          Size="154,42"
+          Id="Package\Vehicles\Insert new data"
+          TopLeft="589,437" />
+        <NodeLayout
+          Size="290,42"
+          Id="Package\Vehicles\Lookup  Accident_Index, Vehicle_References"
+          TopLeft="298,230" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Vehicles\Vehicles_Stage"
+          TopLeft="365,52" />
+        <NodeLayout
+          Size="253,42"
+          Id="Package\Vehicles\Add CreateDate, UpdateDate column"
+          TopLeft="543,336" />
         <EdgeLayout
-          Id="Package\Accidents.Paths[Derived Column Output]"
-          TopLeft="307.75,309">
+          Id="Package\Vehicles.Paths[OLE DB Source Output]"
+          TopLeft="440.75,94">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,38"
+              EndConnector="0,52"
               Start="0,0"
-              End="0,30.5">
+              End="0,44.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,30.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Accidents.Paths[OLE DB Source Output]"
-          TopLeft="427.75,102">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,53"
-              Start="0,0"
-              End="0,45.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,45.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Accidents.Paths[Lookup No Match Output]"
-          TopLeft="460.666666666667,197">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="203.833333333333,71"
-              Start="0,0"
-              End="203.833333333333,63.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24.7576075550892" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,24.7576075550892"
-                    Point2="0,28.7576075550892"
-                    Point3="4,28.7576075550892" />
-                  <mssgle:LineSegment
-                    End="199.833333333333,28.7576075550892" />
-                  <mssgle:CubicBezierSegment
-                    Point1="199.833333333333,28.7576075550892"
-                    Point2="203.833333333333,28.7576075550892"
-                    Point3="203.833333333333,32.7576075550892" />
-                  <mssgle:LineSegment
-                    End="203.833333333333,63.5" />
+                    End="0,44.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="46.1102799479167,33.7576075550892,111.6127734375,11.609375"
+              BoundingBox="0,0,0,0"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Accidents.Paths[Lookup Match Output]"
-          TopLeft="400.333333333333,197">
+          Id="Package\Vehicles.Paths[Lookup No Match Output]"
+          TopLeft="490,272">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-94.8333333333333,70"
+              EndConnector="179.5,64"
               Start="0,0"
-              End="-94.8333333333333,62.5">
+              End="179.5,56.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,24.3525708289612" />
+                    End="0,21.8106995884774" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,24.3525708289612"
-                    Point2="0,28.3525708289612"
-                    Point3="-4,28.3525708289612" />
+                    Point1="0,21.8106995884774"
+                    Point2="0,25.8106995884774"
+                    Point3="4,25.8106995884774" />
                   <mssgle:LineSegment
-                    End="-90.8333333333333,28.3525708289612" />
+                    End="175.5,25.8106995884774" />
                   <mssgle:CubicBezierSegment
-                    Point1="-90.8333333333333,28.3525708289612"
-                    Point2="-94.8333333333333,28.3525708289612"
-                    Point3="-94.8333333333333,32.3525708289612" />
+                    Point1="175.5,25.8106995884774"
+                    Point2="179.5,25.8106995884774"
+                    Point3="179.5,29.8106995884774" />
                   <mssgle:LineSegment
-                    End="-94.8333333333333,62.5" />
+                    End="179.5,56.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-95.6080533854167,33.3525708289612,96.3827734375,11.609375"
+              BoundingBox="33.94361328125,30.8106995884774,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Accidents.Paths[Derived Column Output1]"
-          TopLeft="667.25,310">
+          Id="Package\Vehicles.Paths[Lookup Match Output1]"
+          TopLeft="396,272">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,37"
+              EndConnector="-150.5,68"
               Start="0,0"
-              End="0,29.5">
+              End="-150.5,60.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,29.5" />
+                    End="0,23.4238683127572" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.4238683127572"
+                    Point2="0,27.4238683127572"
+                    Point3="-4,27.4238683127572" />
+                  <mssgle:LineSegment
+                    End="-146.5,27.4238683127572" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-146.5,27.4238683127572"
+                    Point2="-150.5,27.4238683127572"
+                    Point3="-150.5,31.4238683127572" />
+                  <mssgle:LineSegment
+                    End="-150.5,60.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-123.44138671875,32.4238683127572,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Vehicles.Paths[Lookup Match Output]"
+          TopLeft="442.25,188">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42"
+              Start="0,0"
+              End="0,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,11.4453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Vehicles.Paths[Derived Column Output1]"
+          TopLeft="667.75,378">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59"
+              Start="0,0"
+              End="0,51.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Vehicles.Paths[Derived Column Output]"
+          TopLeft="241.75,382">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,58"
+              Start="0,0"
+              End="0,50.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
