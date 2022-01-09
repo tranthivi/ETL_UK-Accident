@@ -12,7 +12,11 @@
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
   DTS:VersionBuild="2"
+<<<<<<< HEAD
   DTS:VersionGUID="{ECFC10EB-E0C6-4ED1-8C89-196D02A69203}">
+=======
+  DTS:VersionGUID="{5F27E545-0174-4DC1-9B56-A89E213342D9}">
+>>>>>>> e841cae7e11a3460d8881f259ee03f732221bad9
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -14495,6 +14499,135 @@ where [refTable].[Year] = ?</property>
                 </output>
               </outputs>
             </component>
+<<<<<<< HEAD
+=======
+          </components>
+          <paths>
+            <path
+              refId="Package\Dim_TimeMovement.Paths[Aggregate Output 1]"
+              endId="Package\Dim_TimeMovement\Sort 8.Inputs[Sort Input]"
+              name="Aggregate Output 1"
+              startId="Package\Dim_TimeMovement\Aggregate.Outputs[Aggregate Output 1]" />
+            <path
+              refId="Package\Dim_TimeMovement.Paths[Derived Column Output]"
+              endId="Package\Dim_TimeMovement\Derived Column.Inputs[Derived Column Input]"
+              name="Derived Column Output"
+              startId="Package\Dim_TimeMovement\Derived Column 1.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Dim_TimeMovement.Paths[Derived Column Output1]"
+              endId="Package\Dim_TimeMovement\Sort 6.Inputs[Sort Input]"
+              name="Derived Column Output"
+              startId="Package\Dim_TimeMovement\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Dim_TimeMovement.Paths[Merge Join Output]"
+              endId="Package\Dim_TimeMovement\Sort 5.Inputs[Sort Input]"
+              name="Merge Join Output"
+              startId="Package\Dim_TimeMovement\Merge Join 1.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\Dim_TimeMovement.Paths[Merge Join Output1]"
+              endId="Package\Dim_TimeMovement\Aggregate.Inputs[Aggregate Input 1]"
+              name="Merge Join Output"
+              startId="Package\Dim_TimeMovement\Merge Join 3.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\Dim_TimeMovement.Paths[Merge Join Output2]"
+              endId="Package\Dim_TimeMovement\Sort 7.Inputs[Sort Input]"
+              name="Merge Join Output"
+              startId="Package\Dim_TimeMovement\Merge Join 2.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\Dim_TimeMovement.Paths[Merge Join Output3]"
+              endId="Package\Dim_TimeMovement\Sort 4.Inputs[Sort Input]"
+              name="Merge Join Output"
+              startId="Package\Dim_TimeMovement\Merge Join.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\Dim_TimeMovement.Paths[OLE DB Source Output4]"
+              endId="Package\Dim_TimeMovement\Sort 2.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\Dim_TimeMovement\Dim_Month.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Dim_TimeMovement.Paths[OLE DB Source Output2]"
+              endId="Package\Dim_TimeMovement\Sort 3.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\Dim_TimeMovement\Dim_Day.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Dim_TimeMovement.Paths[OLE DB Source Output3]"
+              endId="Package\Dim_TimeMovement\Derived Column 1.Inputs[Derived Column Input]"
+              name="OLE DB Source Output"
+              startId="Package\Dim_TimeMovement\Accidents_NDS.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Dim_TimeMovement.Paths[OLE DB Source Output]"
+              endId="Package\Dim_TimeMovement\Sort.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\Dim_TimeMovement\Dim_Year.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Dim_TimeMovement.Paths[OLE DB Source Output1]"
+              endId="Package\Dim_TimeMovement\Sort 1.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\Dim_TimeMovement\Dim_Quarter.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Dim_TimeMovement.Paths[Sort Output7]"
+              endId="Package\Dim_TimeMovement\Merge Join.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\Dim_TimeMovement\Sort 1.Outputs[Sort Output]" />
+            <path
+              refId="Package\Dim_TimeMovement.Paths[Sort Output]"
+              endId="Package\Dim_TimeMovement\Merge Join 2.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\Dim_TimeMovement\Sort 5.Outputs[Sort Output]" />
+            <path
+              refId="Package\Dim_TimeMovement.Paths[Sort Output1]"
+              endId="Package\Dim_TimeMovement\Merge Join 3.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\Dim_TimeMovement\Sort 6.Outputs[Sort Output]" />
+            <path
+              refId="Package\Dim_TimeMovement.Paths[Sort Output2]"
+              endId="Package\Dim_TimeMovement\Dim_Time.Inputs[OLE DB Destination Input]"
+              name="Sort Output"
+              startId="Package\Dim_TimeMovement\Sort 8.Outputs[Sort Output]" />
+            <path
+              refId="Package\Dim_TimeMovement.Paths[Sort Output3]"
+              endId="Package\Dim_TimeMovement\Merge Join 1.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\Dim_TimeMovement\Sort 2.Outputs[Sort Output]" />
+            <path
+              refId="Package\Dim_TimeMovement.Paths[Sort Output4]"
+              endId="Package\Dim_TimeMovement\Merge Join 3.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\Dim_TimeMovement\Sort 7.Outputs[Sort Output]" />
+            <path
+              refId="Package\Dim_TimeMovement.Paths[Sort Output5]"
+              endId="Package\Dim_TimeMovement\Merge Join 2.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\Dim_TimeMovement\Sort 3.Outputs[Sort Output]" />
+            <path
+              refId="Package\Dim_TimeMovement.Paths[Sort Output6]"
+              endId="Package\Dim_TimeMovement\Merge Join.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\Dim_TimeMovement\Sort.Outputs[Sort Output]" />
+            <path
+              refId="Package\Dim_TimeMovement.Paths[Sort Output8]"
+              endId="Package\Dim_TimeMovement\Merge Join 1.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\Dim_TimeMovement\Sort 4.Outputs[Sort Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Dim_Town_City"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{1a3d997c-1a1a-4d8e-b046-89617d8ad2f4}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Dim_Town_City"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+>>>>>>> e841cae7e11a3460d8881f259ee03f732221bad9
             <component
               refId="Package\Dim_Urban_or_Rural_Area 1\OLE DB Command 1"
               componentClassID="Microsoft.OLEDBCommand"
@@ -25750,7 +25883,11 @@ where [refTable].[Journey_Purpose_Code] = ? and [refTable].[Journey_Purpose] = ?
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+<<<<<<< HEAD
                   name="ParameterMap">#{Package\Fact_Number_Accident 1\Aggregate.Inputs[Aggregate Input 1].Columns[Accident_Index]};#{Package\Fact_Number_Accident 1\Aggregate.Outputs[Aggregate Output 1].Columns[Accident_Index]};</property>
+=======
+                  name="ParameterMap">#{Package\Fact_Number_Accident\794:invalid};#{Package\Fact_Number_Accident\795:invalid};</property>
+>>>>>>> e841cae7e11a3460d8881f259ee03f732221bad9
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -28437,6 +28574,7 @@ where [refTable].[Year] = ?</property>
               name="Derived Column Output"
               startId="Package\Fact_Number_Accident 1\Derived Column.Outputs[Derived Column Output]" />
             <path
+<<<<<<< HEAD
               refId="Package\Fact_Number_Accident 1.Paths[Lookup Match Output10]"
               endId="Package\Fact_Number_Accident 1\Lookup Road_Type.Inputs[Lookup Input]"
               name="Lookup Match Output"
@@ -28456,12 +28594,44 @@ where [refTable].[Year] = ?</property>
               endId="Package\Fact_Number_Accident 1\Derived Column.Inputs[Derived Column Input]"
               name="Lookup Match Output"
               startId="Package\Fact_Number_Accident 1\Lookup Accident_Severity.Outputs[Lookup Match Output]" />
+=======
+              refId="Package\Fact_Number_Accident.Paths[Lookup Match Output10]"
+              endId="Package\Fact_Number_Accident\Aggregate.Inputs[Aggregate Input 1]"
+              name="Lookup Match Output"
+              startId="Package\Fact_Number_Accident\Lookup_Time.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Fact_Number_Accident.Paths[Lookup Match Output9]"
+              endId="Package\Fact_Number_Accident\Derived Column 1.Inputs[Derived Column Input]"
+              name="Lookup Match Output"
+              startId="Package\Fact_Number_Accident\Lookup_Journey_Purpost.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Fact_Number_Accident.Paths[Lookup Match Output8]"
+              endId="Package\Fact_Number_Accident\Derived Column.Inputs[Derived Column Input]"
+              name="Lookup Match Output"
+              startId="Package\Fact_Number_Accident\Lookup Accident_Severity.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Fact_Number_Accident.Paths[Lookup Match Output7]"
+              endId="Package\Fact_Number_Accident\Lookup_Time.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Fact_Number_Accident\Lookup_Day.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Fact_Number_Accident.Paths[Lookup Match Output6]"
+              endId="Package\Fact_Number_Accident\Lookup_Day.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Fact_Number_Accident\Lookup_Month.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Fact_Number_Accident.Paths[Lookup Match Output5]"
+              endId="Package\Fact_Number_Accident\Lookup_Month.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Fact_Number_Accident\Lookup_Quarter.Outputs[Lookup Match Output]" />
+>>>>>>> e841cae7e11a3460d8881f259ee03f732221bad9
             <path
               refId="Package\Fact_Number_Accident 1.Paths[Lookup Match Output6]"
               endId="Package\Fact_Number_Accident 1\Lookup_Time.Inputs[Lookup Input]"
               name="Lookup Match Output"
               startId="Package\Fact_Number_Accident 1\Lookup_Day.Outputs[Lookup Match Output]" />
             <path
+<<<<<<< HEAD
               refId="Package\Fact_Number_Accident 1.Paths[Lookup Match Output5]"
               endId="Package\Fact_Number_Accident 1\Lookup_Day.Inputs[Lookup Input]"
               name="Lookup Match Output"
@@ -28491,6 +28661,27 @@ where [refTable].[Year] = ?</property>
               endId="Package\Fact_Number_Accident 1\Conditional Split.Inputs[Conditional Split Input]"
               name="Lookup Match Output"
               startId="Package\Fact_Number_Accident 1\Lookup Built_Up_Road.Outputs[Lookup Match Output]" />
+=======
+              refId="Package\Fact_Number_Accident.Paths[Lookup Match Output3]"
+              endId="Package\Fact_Number_Accident\Lookup Road_Type.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Fact_Number_Accident\Lookup Vehicle_Type.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Fact_Number_Accident.Paths[Lookup Match Output2]"
+              endId="Package\Fact_Number_Accident\Lookup_Journey_Purpost.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Fact_Number_Accident\Lookup_Urban_or_Rural_Area.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Fact_Number_Accident.Paths[Lookup Match Output1]"
+              endId="Package\Fact_Number_Accident\Lookup_Urban_or_Rural_Area.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Fact_Number_Accident\Lookup Road_Type.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Fact_Number_Accident.Paths[Lookup Match Output]"
+              endId="Package\Fact_Number_Accident\Conditional Split.Inputs[Conditional Split Input]"
+              name="Lookup Match Output"
+              startId="Package\Fact_Number_Accident\Lookup Built_Up_Road.Outputs[Lookup Match Output]" />
+>>>>>>> e841cae7e11a3460d8881f259ee03f732221bad9
             <path
               refId="Package\Fact_Number_Accident 1.Paths[Merge Join Output]"
               endId="Package\Fact_Number_Accident 1\Lookup Accident_Severity.Inputs[Lookup Input]"
@@ -28593,6 +28784,7 @@ where [refTable].[Year] = ?</property>
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="187,42"
+<<<<<<< HEAD
           Id="Package\Dim_Accident_Severity 1"
           TopLeft="301,28" />
         <NodeLayout
@@ -28666,6 +28858,73 @@ where [refTable].[Year] = ?</property>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
           TopLeft="151,424.5">
+=======
+          Id="Package\Dim_Accident_Severity"
+          TopLeft="335,77" />
+        <NodeLayout
+          Size="173,42"
+          Id="Package\Dim_Built_Up_Road"
+          TopLeft="340,339" />
+        <NodeLayout
+          Size="140,42"
+          Id="Package\Dim_Country"
+          TopLeft="1034,73" />
+        <NodeLayout
+          Size="136,42"
+          Id="Package\Dim_County"
+          TopLeft="1046,222" />
+        <NodeLayout
+          Size="122,42"
+          Id="Package\Dim_Day"
+          TopLeft="549,445" />
+        <NodeLayout
+          Size="184,42"
+          Id="Package\Dim_Journey_Purpose"
+          TopLeft="65,219" />
+        <NodeLayout
+          Size="133,42"
+          Id="Package\Dim_Month"
+          TopLeft="388,450" />
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Dim_Quarter"
+          TopLeft="210,452" />
+        <NodeLayout
+          Size="136,42"
+          Id="Package\Dim_Region"
+          TopLeft="1039,146" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Dim_Road_Type"
+          TopLeft="94,335" />
+        <NodeLayout
+          Size="176,42"
+          Id="Package\Dim_TimeMovement"
+          TopLeft="729,452" />
+        <NodeLayout
+          Size="153,42"
+          Id="Package\Dim_Town_City"
+          TopLeft="1040,297" />
+        <NodeLayout
+          Size="205,42"
+          Id="Package\Dim_Urban_or_Rural_Area"
+          TopLeft="324,229" />
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Dim_Vehicle_Type"
+          TopLeft="67,70" />
+        <NodeLayout
+          Size="125,42"
+          Id="Package\Dim_Year"
+          TopLeft="60,453" />
+        <NodeLayout
+          Size="187,42"
+          Id="Package\Fact_Number_Accident"
+          TopLeft="698,171" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="185,473.5">
+>>>>>>> e841cae7e11a3460d8881f259ee03f732221bad9
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -28686,8 +28945,13 @@ where [refTable].[Year] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+<<<<<<< HEAD
           Id="Package.PrecedenceConstraints[Constraint 1 2]"
           TopLeft="315,423">
+=======
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="349,472">
+>>>>>>> e841cae7e11a3460d8881f259ee03f732221bad9
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -28708,8 +28972,13 @@ where [refTable].[Year] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+<<<<<<< HEAD
           Id="Package.PrecedenceConstraints[Constraint 1 1 1]"
           TopLeft="1076.5,139">
+=======
+          Id="Package.PrecedenceConstraints[Constraint 1 1]"
+          TopLeft="1110.5,188">
+>>>>>>> e841cae7e11a3460d8881f259ee03f732221bad9
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -28730,8 +28999,13 @@ where [refTable].[Year] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+<<<<<<< HEAD
           Id="Package.PrecedenceConstraints[Constraint 2 2]"
           TopLeft="487,419.5">
+=======
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="521,468.5">
+>>>>>>> e841cae7e11a3460d8881f259ee03f732221bad9
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -28752,8 +29026,13 @@ where [refTable].[Year] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+<<<<<<< HEAD
           Id="Package.PrecedenceConstraints[Constraint 2 1 1]"
           TopLeft="1081.25,215">
+=======
+          Id="Package.PrecedenceConstraints[Constraint 2 1]"
+          TopLeft="1115.25,264">
+>>>>>>> e841cae7e11a3460d8881f259ee03f732221bad9
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -28774,8 +29053,13 @@ where [refTable].[Year] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+<<<<<<< HEAD
           Id="Package.PrecedenceConstraints[Constraint 3 1]"
           TopLeft="637,420.5">
+=======
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="671,469.5">
+>>>>>>> e841cae7e11a3460d8881f259ee03f732221bad9
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -28796,8 +29080,13 @@ where [refTable].[Year] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+<<<<<<< HEAD
           Id="Package.PrecedenceConstraints[Constraint 4 1]"
           TopLeft="1071.5,66">
+=======
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="1105.5,115">
+>>>>>>> e841cae7e11a3460d8881f259ee03f732221bad9
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -28817,6 +29106,13 @@ where [refTable].[Year] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <AnnotationLayout
+          Text="l"
+          ParentId="Package"
+          FontInfo="{assembly:Null}"
+          Size="134,60"
+          Id="230116a2-83b2-4b7e-8259-ab050197a97a"
+          TopLeft="941,20.5" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -31698,8 +31994,13 @@ where [refTable].[Year] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+<<<<<<< HEAD
           Id="Package\Dim_Town_City 1.Paths[Merge Join Output2]"
           TopLeft="955,313">
+=======
+          Id="Package\Dim_TimeMovement.Paths[Sort Output]"
+          TopLeft="575,394.5">
+>>>>>>> e841cae7e11a3460d8881f259ee03f732221bad9
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -31722,8 +32023,13 @@ where [refTable].[Year] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+<<<<<<< HEAD
           Id="Package\Dim_Town_City 1.Paths[Merge Join Output1]"
           TopLeft="671,292.5">
+=======
+          Id="Package\Dim_TimeMovement.Paths[Sort Output7]"
+          TopLeft="297.5,154">
+>>>>>>> e841cae7e11a3460d8881f259ee03f732221bad9
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -31746,8 +32052,13 @@ where [refTable].[Year] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+<<<<<<< HEAD
           Id="Package\Dim_Town_City 1.Paths[Merge Join Output]"
           TopLeft="230.75,248">
+=======
+          Id="Package\Dim_TimeMovement.Paths[Sort Output6]"
+          TopLeft="94,153">
+>>>>>>> e841cae7e11a3460d8881f259ee03f732221bad9
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -31770,8 +32081,13 @@ where [refTable].[Year] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+<<<<<<< HEAD
           Id="Package\Dim_Town_City 1.Paths[Aggregate Output 1]"
           TopLeft="955.5,396">
+=======
+          Id="Package\Dim_TimeMovement.Paths[Sort Output5]"
+          TopLeft="742.5,161">
+>>>>>>> e841cae7e11a3460d8881f259ee03f732221bad9
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -31826,8 +32142,13 @@ where [refTable].[Year] = ?</property>
           Id="Package\Dim_Urban_or_Rural_Area 1\Insert Destination"
           TopLeft="5.50000000000006,311.5" />
         <EdgeLayout
+<<<<<<< HEAD
           Id="Package\Dim_Urban_or_Rural_Area 1.Paths[New Output]"
           TopLeft="261.75,251.5">
+=======
+          Id="Package\Dim_TimeMovement.Paths[Sort Output4]"
+          TopLeft="799,472">
+>>>>>>> e841cae7e11a3460d8881f259ee03f732221bad9
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -31862,8 +32183,13 @@ where [refTable].[Year] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+<<<<<<< HEAD
           Id="Package\Dim_Urban_or_Rural_Area 1.Paths[Inferred Member Updates Output]"
           TopLeft="312,251.5">
+=======
+          Id="Package\Dim_TimeMovement.Paths[Sort Output3]"
+          TopLeft="518,161">
+>>>>>>> e841cae7e11a3460d8881f259ee03f732221bad9
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -31886,8 +32212,13 @@ where [refTable].[Year] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+<<<<<<< HEAD
           Id="Package\Dim_Urban_or_Rural_Area 1.Paths[Changing Attribute Updates Output]"
           TopLeft="362.25,251.5">
+=======
+          Id="Package\Dim_TimeMovement.Paths[Sort Output2]"
+          TopLeft="1032.5,650">
+>>>>>>> e841cae7e11a3460d8881f259ee03f732221bad9
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -31922,8 +32253,13 @@ where [refTable].[Year] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+<<<<<<< HEAD
           Id="Package\Dim_Urban_or_Rural_Area 1.Paths[Sort Output]"
           TopLeft="312,149.5">
+=======
+          Id="Package\Dim_TimeMovement.Paths[Sort Output1]"
+          TopLeft="1036,358">
+>>>>>>> e841cae7e11a3460d8881f259ee03f732221bad9
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -31946,8 +32282,13 @@ where [refTable].[Year] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+<<<<<<< HEAD
           Id="Package\Dim_Urban_or_Rural_Area 1.Paths[OLE DB Source Output]"
           TopLeft="312,47.4999999999999">
+=======
+          Id="Package\Dim_TimeMovement.Paths[OLE DB Source Output]"
+          TopLeft="95.75,85">
+>>>>>>> e841cae7e11a3460d8881f259ee03f732221bad9
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -32002,8 +32343,13 @@ where [refTable].[Year] = ?</property>
           Id="Package\Dim_Vehicle_Type 1\Insert Destination"
           TopLeft="5.50000000000006,311.5" />
         <EdgeLayout
+<<<<<<< HEAD
           Id="Package\Dim_Vehicle_Type 1.Paths[New Output]"
           TopLeft="261.75,251.5">
+=======
+          Id="Package\Dim_TimeMovement.Paths[OLE DB Source Output2]"
+          TopLeft="739.25,86">
+>>>>>>> e841cae7e11a3460d8881f259ee03f732221bad9
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -32038,8 +32384,13 @@ where [refTable].[Year] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+<<<<<<< HEAD
           Id="Package\Dim_Vehicle_Type 1.Paths[Inferred Member Updates Output]"
           TopLeft="312,251.5">
+=======
+          Id="Package\Dim_TimeMovement.Paths[OLE DB Source Output1]"
+          TopLeft="298.5,84">
+>>>>>>> e841cae7e11a3460d8881f259ee03f732221bad9
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -32062,8 +32413,13 @@ where [refTable].[Year] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+<<<<<<< HEAD
           Id="Package\Dim_Vehicle_Type 1.Paths[Changing Attribute Updates Output]"
           TopLeft="362.25,251.5">
+=======
+          Id="Package\Dim_TimeMovement.Paths[OLE DB Source Output4]"
+          TopLeft="517.5,86">
+>>>>>>> e841cae7e11a3460d8881f259ee03f732221bad9
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -32098,8 +32454,13 @@ where [refTable].[Year] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+<<<<<<< HEAD
           Id="Package\Dim_Vehicle_Type 1.Paths[Sort Output]"
           TopLeft="312,149.5">
+=======
+          Id="Package\Dim_TimeMovement.Paths[OLE DB Source Output3]"
+          TopLeft="1035.25,97">
+>>>>>>> e841cae7e11a3460d8881f259ee03f732221bad9
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -33310,8 +33671,13 @@ where [refTable].[Year] = ?</property>
           Id="Package\Fact_Number_Accident 1\Derived Column"
           TopLeft="654,123" />
         <EdgeLayout
+<<<<<<< HEAD
           Id="Package\Fact_Number_Accident 1.Paths[Lookup Match Output2]"
           TopLeft="1138.75,362">
+=======
+          Id="Package\Fact_Number_Accident.Paths[Lookup Match Output6]"
+          TopLeft="206.25,487">
+>>>>>>> e841cae7e11a3460d8881f259ee03f732221bad9
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -33334,8 +33700,13 @@ where [refTable].[Year] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+<<<<<<< HEAD
           Id="Package\Fact_Number_Accident 1.Paths[Lookup Match Output1]"
           TopLeft="1151,251">
+=======
+          Id="Package\Fact_Number_Accident.Paths[Lookup Match Output7]"
+          TopLeft="276,594.5">
+>>>>>>> e841cae7e11a3460d8881f259ee03f732221bad9
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -33358,8 +33729,13 @@ where [refTable].[Year] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+<<<<<<< HEAD
           Id="Package\Fact_Number_Accident 1.Paths[Lookup Match Output]"
           TopLeft="978,127">
+=======
+          Id="Package\Fact_Number_Accident.Paths[Lookup Match Output8]"
+          TopLeft="550,145.5">
+>>>>>>> e841cae7e11a3460d8881f259ee03f732221bad9
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -33682,7 +34058,11 @@ where [refTable].[Year] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+<<<<<<< HEAD
           Id="Package\Fact_Number_Accident 1.Paths[Lookup Match Output10]"
+=======
+          Id="Package\Fact_Number_Accident.Paths[Lookup Match Output3]"
+>>>>>>> e841cae7e11a3460d8881f259ee03f732221bad9
           TopLeft="1234.5,169">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -33706,8 +34086,37 @@ where [refTable].[Year] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+<<<<<<< HEAD
           Id="Package\Fact_Number_Accident 1.Paths[Lookup Match Output9]"
           TopLeft="441,346">
+=======
+          Id="Package\Fact_Number_Accident.Paths[Lookup Match Output1]"
+          TopLeft="1151,251">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-112,0"
+              Start="0,0"
+              End="-104.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-104.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-100.44138671875,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fact_Number_Accident.Paths[Lookup Match Output2]"
+          TopLeft="819,252.5">
+>>>>>>> e841cae7e11a3460d8881f259ee03f732221bad9
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -33730,7 +34139,11 @@ where [refTable].[Year] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+<<<<<<< HEAD
           Id="Package\Fact_Number_Accident 1.Paths[Lookup Match Output8]"
+=======
+          Id="Package\Fact_Number_Accident.Paths[Lookup Match Output9]"
+>>>>>>> e841cae7e11a3460d8881f259ee03f732221bad9
           TopLeft="553,249.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -33802,8 +34215,13 @@ where [refTable].[Year] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+<<<<<<< HEAD
           Id="Package\Fact_Number_Accident 1.Paths[Lookup Match Output5]"
           TopLeft="695,344.5">
+=======
+          Id="Package\Fact_Number_Accident.Paths[Lookup Match Output]"
+          TopLeft="978,127">
+>>>>>>> e841cae7e11a3460d8881f259ee03f732221bad9
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -33850,8 +34268,13 @@ where [refTable].[Year] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+<<<<<<< HEAD
           Id="Package\Fact_Number_Accident 1.Paths[Lookup Match Output3]"
           TopLeft="176,345">
+=======
+          Id="Package\Fact_Number_Accident.Paths[Lookup Match Output5]"
+          TopLeft="432,464.5">
+>>>>>>> e841cae7e11a3460d8881f259ee03f732221bad9
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
